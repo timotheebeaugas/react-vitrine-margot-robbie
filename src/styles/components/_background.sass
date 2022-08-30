@@ -1,0 +1,25 @@
+.bg-text-container
+  position: absolute
+  transform: skewY(-5deg)
+  index: -999
+  left: 10%
+    
+.animate-text
+  text-transform: uppercase
+  line-height: 0.75
+  font-weight: 800
+  font-size: 66vh
+  opacity: 0.1
+  color: $background-color
+  white-space: nowrap
+  text-shadow: -1px -1px 0 $first-color, 1px -1px 0 $first-color, -1px 1px 0 $first-color, 1px 1px 0 $first-color
+  animation: text-scrolling 60s linear infinite
+
+  &:last-child
+    animation-direction: reverse
+
+@keyframes text-scrolling
+  0% 
+    transform: translate(-50%, -100%)
+  100% 
+    transform: translate(0%, -100%)

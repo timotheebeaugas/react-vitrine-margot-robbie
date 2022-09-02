@@ -3,22 +3,27 @@ import { useI18n } from "./utils/hooks/i18n.js";
 import { Cursor } from "./components/Cursor";
 import { ResizeDevice } from "./utils/devices";
 import { Background } from "./components/Background";
+import { useIsMobile } from "./utils/hooks/isMobile.js";
+import { Award } from "./components/Award.js";
+import { Network } from "./components/Network.js";
+import { Video } from "./components/Video.js";
+import { Film } from "./components/Film.js";
 
 function App() {
   const [language, setLanguage] = useState("en");
   const [content] = useI18n(language);
   const [waiting, setWaiting] = useState(false);
   const [waitingLanguage, setWaitingLanguage] = useState(false);
-
-  const root = document.querySelector(":root");
-
-  const section = document.querySelector("section");
-  const pagination = document.querySelector(".pagination");
-  const activeLanguage = document.querySelector(".active-language");
+  const [isMobile] = useIsMobile();
 
   ResizeDevice();
 
   useEffect(() => {
+    const root = document.querySelector(":root");
+    const section = document.querySelector(".content");
+    const pagination = document.querySelector(".pagination");
+    const activeLanguage = document.querySelector(".active-language");
+
     const wheelMove = (event) => {
       if (!waiting) {
         let style = getComputedStyle(document.body);
@@ -29,14 +34,20 @@ function App() {
           style.getPropertyValue("--page-position-y").split("px")[0]
         );
         let position = height - event.deltaY;
-        let page = pageHeight - Math.sign(event.deltaY) * (pagination.getBoundingClientRect().height / 5);
+        let page =
+          pageHeight -
+          Math.sign(event.deltaY) *
+            (pagination.getBoundingClientRect().height / 5);
 
         if (position >= -400 && position <= 0) {
           root.style.setProperty("--current-position-y", height + "vh");
           root.style.setProperty("--position-y", position + "vh");
-          root.style.setProperty("--current-page-position-y", pageHeight + "px");
+          root.style.setProperty(
+            "--current-page-position-y",
+            pageHeight + "px"
+          );
           root.style.setProperty("--page-position-y", page + "px");
-          console.log(page);
+
           section.classList.add("scroll");
           pagination.classList.add("scroll-page");
           setWaiting(true);
@@ -51,8 +62,7 @@ function App() {
         setWaiting(false);
         section.classList.remove("scroll");
         pagination.classList.remove("scroll-page");
-      }
-      else if (waitingLanguage) {
+      } else if (waitingLanguage) {
         setWaitingLanguage(false);
         activeLanguage.classList.remove("scroll-language");
       }
@@ -62,50 +72,82 @@ function App() {
       document.removeEventListener("wheel", wheelMove);
       clearInterval(interval);
     };
-  }, [waiting, root, waitingLanguage, activeLanguage, pagination, section]);
+  }, [waiting, waitingLanguage]);
 
   const changeLanguage = () => {
     const activeLanguage = document.querySelector(".active-language");
+    const root = document.querySelector(":root");
 
-    if(!waitingLanguage){
+    if (!waitingLanguage) {
       const style = getComputedStyle(document.body);
       let languageHeight = Number(
         style.getPropertyValue("--languages-position-y").split("px")[0]
       );
-      let language = languageHeight === 0 ? -(activeLanguage.getBoundingClientRect().height / 2) : 0; 
-      console.log(languageHeight, language)
-      root.style.setProperty("--current-languages-position-y", languageHeight + "px");
+      let language =
+        languageHeight === 0
+          ? -(activeLanguage.getBoundingClientRect().height / 2)
+          : 0;
+
+      root.style.setProperty(
+        "--current-languages-position-y",
+        languageHeight + "px"
+      );
       root.style.setProperty("--languages-position-y", language + "px");
       activeLanguage.classList.add("scroll-language");
       setLanguage(language === "en" ? "fr" : "en");
-      setWaitingLanguage(true);      
+      setWaitingLanguage(true);
     }
+  };
 
-/*     let interval = setInterval(() => {
-      if (waitingLanguage) {
-        setWaitingLanguage(false);
-        activeLanguage.classList.remove("scroll-language");
-      }
-    }, 1000); 
+  const cursorHover = () => {
+    const cursor = document.querySelector(".cursor");
+    if (!cursor.classList.value.includes("cursor-hover")) {
+      cursor.classList.add("cursor-hover");
+    }
+  };
 
-    return () => {
-      clearInterval(interval);
-    };*/
+  const cursorNotHover = () => {
+    const cursor = document.querySelector(".cursor");
+    if (cursor.classList.value.includes("cursor-hover")) {
+      cursor.classList.remove("cursor-hover");
+    }
+  };
+
+  const activeCursor = () => {
+    const cursor = document.querySelector(".cursor");
+    if (!cursor.classList.value.includes("cursor-active")) {
+      cursor.classList.add("cursor-active");
+    }
+  };
+
+  const unactiveCursor = () => {
+    const cursor = document.querySelector(".cursor");
+    if (cursor.classList.value.includes("cursor-active")) {
+      cursor.classList.remove("cursor-active");
+    }
   };
 
   return (
-    <div className="App">
-      <Cursor />
+    <div className="App" onMouseDown={activeCursor} onMouseUp={unactiveCursor}>
+      {isMobile ? "" : <Cursor />}
+
       <header>
         <div></div>
-        <div className="title">{content.title}</div>
-        <div className="languages" onClick={changeLanguage}>
+        <div className="title">
+          <h1> {content.title} </h1>
+        </div>
+        <div
+          className="languages"
+          onClick={changeLanguage}
+          onMouseEnter={cursorHover}
+          onMouseLeave={cursorNotHover}
+        >
           <div className="item-language">
             <div className="active-language">
               <span>en</span>
               <span>fr</span>
-            </div>            
-          </div>          
+            </div>
+          </div>
         </div>
       </header>
       <main className="move">
@@ -114,23 +156,49 @@ function App() {
             <Background props={content} key={e} />
           ))}
         </div>
-        <section>
-          <article>Biography</article>
-          <article>Awards</article>
-          <article>Films</article>
-          <article>Videos</article>
-          <article>Networks</article>
-        </section>
+        <div className="content">
+          <section className="section">
+            <h2>{content.biography.title}</h2>
+            <p>{content.biography.content}</p>
+            <figure>
+              <div className="portrait" alt={content.biography.legend} />
+            </figure>
+          </section>
+          <section className="section">
+            <h2>{content.awards.title}</h2>
+            {content.awards.content.map((award, i) => (
+              <Award props={award} key={i} />
+            ))}
+          </section>
+          <section className="section">
+            <h2>{content.films.title}</h2>
+            {content.films.content.map((film, i) => (
+              <Film props={film} key={i} />
+            ))}
+          </section>
+          <section className="section">
+            <h2>{content.videos.title}</h2>
+            {content.videos.content.map((video, i) => (
+              <Video props={video} key={i} />
+            ))}
+          </section>
+          <section className="section">
+            <h2>{content.networks.title}</h2>
+            {content.networks.content.map((network, i) => (
+              <Network props={network} key={i} />
+            ))}
+          </section>
+        </div>
       </main>
       <footer>
         <nav>
           <div className="items">
-            <div className="pagination">            
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-            <span>4</span>
-            <span>5</span>
+            <div className="pagination">
+              <span>1</span>
+              <span>2</span>
+              <span>3</span>
+              <span>4</span>
+              <span>5</span>
             </div>
           </div>
           <div className="bullet items"></div>

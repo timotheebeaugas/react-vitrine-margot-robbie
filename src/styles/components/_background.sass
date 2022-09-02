@@ -9,17 +9,11 @@
   line-height: 0.75
   font-weight: 800
   font-size: 66vh
-  opacity: 0.1
+  opacity: .25
   color: $background-color
   white-space: nowrap
-  text-shadow: -1px -1px 0 $first-color, 1px -1px 0 $first-color, -1px 1px 0 $first-color, 1px 1px 0 $first-color
+  text-shadow: -1px -1px 0 $second-color, 1px -1px 0 $second-color, -1px 1px 0 $second-color, 1px 1px 0 $second-color
   animation: text-scrolling 60s linear infinite
 
   &:last-child
     animation-direction: reverse
-
-@keyframes text-scrolling
-  0% 
-    transform: translate(-50%, -100%)
-  100% 
-    transform: translate(0%, -100%)

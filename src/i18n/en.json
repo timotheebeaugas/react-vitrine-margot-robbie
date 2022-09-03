@@ -9,28 +9,109 @@
         "title": "awards",
         "content": [
             {
-                "award": "AACTA International Awards",
+                "title": "AACTA International Awards",
                 "category": "Best Film",
                 "date": "2021",
-                "work": "Promising Young Woman"
+                "desc": "Promising Young Woman",
+                "trailer": ""
             },
             {
-                "award": "AACTA International Awards",
+                "title": "Sant Jordi Awards",
+                "category": "Best Actress in a Foreign Film",
+                "date": "2020",
+                "desc": "Once Upon a Time in Hollywood",
+                "trailer": ""
+            },
+            {
+                "title": "AACTA International Awards",
                 "category": "Best Supporting Actress",
                 "date": "2020",
-                "work": "Bombshell"
+                "desc": "Bombshell",
+                "trailer": ""
             },
             {
-                "award": "Sant Jordi Awards",
-                "category": "Best Film",
-                "date": "2020",
-                "work": "Once Upon a Time in Hollywood"
+                "title": "San Diego Film Critics Society",
+                "category": "Best Actress",
+                "date": "2017",
+                "desc": "I, Tonya",
+                "trailer": ""
             },
             {
-                "award": "AACTA International Awards",
+                "title": "Critics' Choice Movie Awards",
                 "category": "Best Actress",
                 "date": "2018",
-                "work": "I, Tonya"
+                "desc": "I, Tonya",
+                "trailer": ""
+            },
+            {
+                "title": "Alliance of Women Film Journalists",
+                "category": "Bravest Performance",
+                "date": "2018",
+                "desc": "I, Tonya",
+                "trailer": ""
+            },
+            {
+                "title": "AACTA International Awards",
+                "category": "Best Actress",
+                "date": "2018",
+                "desc": "I, Tonya",
+                "trailer": ""
+            },
+            {
+                "title": "San Francisco Bay Area Film Critics Circle",
+                "category": "Best Actress",
+                "date": "2017",
+                "desc": "I, Tonya",
+                "trailer": ""
+            },
+            {
+                "title": "People's Choise Awards",
+                "category": "Favorite Action Movie Actress",
+                "date": "2017",
+                "desc": "Suicide Squad",
+                "trailer": ""
+            },
+            {
+                "title": "New York Film Critics Online",
+                "category": "Best Actress",
+                "date": "2017",
+                "desc": "I, Tonya",
+                "trailer": ""
+            },
+            {
+                "title": "Hollywood Film Awards",
+                "category": "Hollywood Ensemble Award",
+                "date": "2017",
+                "desc": "I, Tonya",
+                "trailer": ""
+            },
+            {
+                "title": "Florida Film Critics Circle",
+                "category": "Best Actress",
+                "date": "2017",
+                "desc": "I, Tonya",
+                "trailer": ""
+            },
+            {
+                "title": "Critics' Choice Movie Awards",
+                "category": "Best actress",
+                "date": "2017",
+                "desc": "Suicide Squad",
+                "trailer": ""
+            },
+            {
+                "title": "Teen Choice Awards",
+                "category": "Choice Movie Actress",
+                "date": "2016",
+                "desc": "Suicide Squad",
+                "trailer": ""
+            },
+            {
+                "title": "Empire Awards",
+                "category": "Best Female Newcomer",
+                "date": "2014",
+                "desc": "The Wolf of Wall Street",
+                "trailer": ""
             }
         ]
     },
@@ -38,46 +119,179 @@
         "title": "Notable films",
         "content": [
             {
-                "title": "The Wolf of Wall Street",
-                "genre": "Biopic",
-                "release": "2013",
-                "pitch": ""
+                "title": "The Suicide Squad",
+                "category": "Superhero",
+                "date": "2021",
+                "desc": "",
+                "trailer": ""
             },
             {
-                "title": "Suicide Squad",
-                "genre": "Superhero",
-                "release": "2016",
-                "pitch": ""
+                "title": "Peter Rabbit 2: The Runaway",
+                "category": "Animation",
+                "date": "2021",
+                "desc": "",
+                "trailer": ""
+            },
+            {
+                "title": "Promising Young Woman",
+                "category": "Thriller",
+                "date": "2020",
+                "desc": "",
+                "trailer": ""
+            },
+            {
+                "title": "Birds of Prey",
+                "category": "Superhero",
+                "date": "2020",
+                "desc": "",
+                "trailer": ""
+            },
+            {
+                "title": "Bombshell",
+                "category": "Drama",
+                "date": "2019",
+                "desc": "",
+                "trailer": ""
+            },
+            {
+                "title": "Once Upon a Time in Hollywood",
+                "category": "Comedy",
+                "date": "2019",
+                "desc": "pitch",
+                "trailer": ""
+            },
+            {
+                "title": "Dreamland",
+                "category": "Thriller",
+                "date": "2019",
+                "desc": "pitch",
+                "trailer": ""
+            },
+            {
+                "title": "Mary Queen of Scots",
+                "category": "Historical",
+                "date": "2018",
+                "desc": "pitch",
+                "trailer": ""
+            },
+            {
+                "Neighbours": "Slaughterhouse Rulez",
+                "category": "Horror",
+                "date": "2018",
+                "desc": "pitch",
+                "trailer": ""
+            },
+            {
+                "Neighbours": "Terminal",
+                "category": "Thriller",
+                "date": "2018",
+                "desc": "pitch",
+                "trailer": ""
+            },
+            {
+                "Neighbours": "Flopsy Turvy",
+                "category": "Animation",
+                "date": "2018",
+                "desc": "pitch",
+                "trailer": ""
+            },
+            {
+                "title": "Peter Rabbit",
+                "category": "Animation",
+                "date": "2018",
+                "desc": "",
+                "trailer": ""
+            },
+            {
+                "title": "Goodbye Christopher Robin",
+                "category": "Biopic",
+                "date": "2017",
+                "desc": "pitch",
+                "trailer": ""
             },
             {
                 "title": "I, Tonya",
-                "genre": "Biopic",
-                "release": "2017",
-                "pitch": ""
+                "category": "Biopic",
+                "date": "2017",
+                "desc": "pitch",
+                "trailer": ""
             },
             {
-                "title": "Once Upon a Time… in Hollywood",
-                "genre": "Comedy-drama",
-                "release": "2019",
-                "pitch": ""
+                "title": "Suicide Squad",
+                "category": "Superhero",
+                "date": "2016",
+                "desc": "pitch",
+                "trailer": ""
             },
             {
-                "Neighbours": "Bombshell",
-                "genre": "Drama",
-                "release": "2019",
-                "pitch": ""
+                "Neighbours": "The Legend of Tarzan",
+                "category": "Action",
+                "date": "2016",
+                "desc": "pitch",
+                "trailer": ""
             },
             {
-                "Neighbours": "Birds of Prey",
-                "genre": "Superhero",
-                "release": "2020",
-                "pitch": ""
+                "Neighbours": "Whiskey Tango Foxtrot",
+                "category": "Drama",
+                "date": "2016",
+                "desc": "pitch",
+                "trailer": ""
             },
             {
-                "Neighbours": "The Suicide Squad",
-                "genre": "Superhero",
-                "release": "2021",
-                "pitch": ""
+                "Neighbours": "The Big Short",
+                "category": "Comedy",
+                "date": "2021",
+                "desc": "pitch",
+                "trailer": ""
+            },
+            {
+                "title": "Suite Française",
+                "category": "Drama",
+                "date": "2015",
+                "desc": "",
+                "trailer": ""
+            },
+            {
+                "title": "Focus",
+                "category": "Comedy",
+                "date": "2015",
+                "desc": "pitch",
+                "trailer": ""
+            },
+            {
+                "title": "Z for Zachariah",
+                "category": "Drama",
+                "date": "2015",
+                "desc": "pitch",
+                "trailer": ""
+            },
+            {
+                "title": "The Wolf of Wall Street",
+                "category": "Comedy",
+                "date": "2013",
+                "desc": "pitch",
+                "trailer": ""
+            },
+            {
+                "Neighbours": "About Time",
+                "category": "Drama",
+                "date": "2013",
+                "desc": "pitch",
+                "trailer": ""
+            },
+            {
+                "Neighbours": "ICU",
+                "category": "Thriller",
+                "date": "2009",
+                "desc": "pitch",
+                "trailer": ""
+            },
+            {
+                "Neighbours": "Vigilante",
+                "category": "Action",
+                "date": "2008",
+                "desc": "pitch",
+                "trailer": ""
             }
         ]
     },

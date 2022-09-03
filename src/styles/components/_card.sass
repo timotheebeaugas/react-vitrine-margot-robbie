@@ -1,0 +1,39 @@
+.card-content
+    height: 300px
+    display: flex
+    justify-content: flex-start
+    overflow: hidden
+
+.card
+    height: 100%
+    display: grid
+    grid-template-rows: 3fr 6fr
+
+h3
+    font-weight: bold
+
+.date
+    font-weight: bold
+    font-size: 40px
+
+a
+  text-decoration: none
+  color: $first-color
+  &:after
+    content: ''
+    display: block
+    width: 0%
+    height: 2px
+    margin-top: 0px
+    left: 0%
+    background: black
+    transition: width 300ms ease
+  &:hover
+    &:after
+      width: 100%
+      left: 0%
+      background: $first-color
+
+.detail
+  margin: 0px
+  font-style: italic

@@ -4,10 +4,9 @@ import { Cursor } from "./components/Cursor";
 import { ResizeDevice } from "./utils/devices";
 import { Background } from "./components/Background";
 import { useIsMobile } from "./utils/hooks/isMobile.js";
-import { Award } from "./components/Award.js";
+import { Card } from "./components/Card.js";
 import { Network } from "./components/Network.js";
 import { Video } from "./components/Video.js";
-import { Film } from "./components/Film.js";
 
 function App() {
   const [language, setLanguage] = useState("en");
@@ -150,6 +149,7 @@ function App() {
           </div>
         </div>
       </header>
+
       <main className="move">
         <div className="bg-text-container">
           {[1, 2].map((e) => (
@@ -166,30 +166,39 @@ function App() {
           </section>
           <section className="section">
             <h2>{content.awards.title}</h2>
-            {content.awards.content.map((award, i) => (
-              <Award props={award} key={i} />
-            ))}
+            <div className="card-content">
+              {content.awards.content.map((content, i) => (
+                <Card props={{content, cursorHover, cursorNotHover}} key={i} />
+              ))}
+            </div>
           </section>
           <section className="section">
             <h2>{content.films.title}</h2>
-            {content.films.content.map((film, i) => (
-              <Film props={film} key={i} />
-            ))}
+            <div className="card-content">
+              {content.films.content.map((content, i) => (
+                <Card props={{content, cursorHover, cursorNotHover}} key={i} />
+              ))}
+            </div>
           </section>
           <section className="section">
             <h2>{content.videos.title}</h2>
-            {content.videos.content.map((video, i) => (
+            <div className="card-content">
+              {/*             {content.videos.content.map((video, i) => (
               <Video props={video} key={i} />
-            ))}
+            ))} */}
+            </div>
           </section>
           <section className="section">
             <h2>{content.networks.title}</h2>
-            {content.networks.content.map((network, i) => (
-              <Network props={network} key={i} />
-            ))}
+            <div className="card-content">
+              {content.networks.content.map((content, i) => (
+                <Network props={{content, cursorHover, cursorNotHover}} key={i} />
+              ))}
+            </div>
           </section>
         </div>
       </main>
+
       <footer>
         <nav>
           <div className="items">

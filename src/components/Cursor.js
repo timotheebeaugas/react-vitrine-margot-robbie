@@ -2,13 +2,11 @@ import { useEffect, useState } from "react";
 
 export const Cursor = () => {
   const [position, setPosition] = useState();
-  const [ring, setRing] = useState();
   const [displayMouse, setDisplayMouse] = useState(false);
 
   useEffect(() => {
     const mousePosition = (event) => {
       setPosition({ left: event.clientX, top: event.clientY });
-      setRing({ left: event.clientX, top: event.clientY});
 
       if (
         window.innerWidth - event.clientX < 5 ||
@@ -32,7 +30,7 @@ export const Cursor = () => {
   return displayMouse ? (
     <>
       <div className="cursor" style={position}></div>
-      <div className="ring" style={ring}></div>
+      <div className="ring" style={position}></div>
     </>
   ) : null;
 };

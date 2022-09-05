@@ -1,39 +1,32 @@
-.card-content
-    height: 300px
-    display: flex
-    justify-content: flex-start
-    overflow: hidden
+.cards-content
+  height: 300px
+  display: flex
+  justify-content: flex-start
+  overflow: visible
+/*   .card
+    &:nth-child(2n)
+      background-color: rgba($second-color, .25) */
 
 .card
-    height: 100%
-    display: grid
-    grid-template-rows: 3fr 6fr
+  height: 300px
+  width: 200px
+  display: grid
+  grid-template-rows: 100px 200px
+  margin: 0px 10px
 
 h3
-    font-weight: bold
+  font-weight: bold
 
-.date
-    font-weight: bold
-    font-size: 40px
-
-a
-  text-decoration: none
+.card-date
+  font-weight: bold
+  font-size: 100px
+  text-align: center
   color: $first-color
-  &:after
-    content: ''
-    display: block
-    width: 0%
-    height: 2px
-    margin-top: 0px
-    left: 0%
-    background: black
-    transition: width 300ms ease
-  &:hover
-    &:after
-      width: 100%
-      left: 0%
-      background: $first-color
+  opacity: .25
 
-.detail
+.card-detail
   margin: 0px
   font-style: italic
+
+
+      

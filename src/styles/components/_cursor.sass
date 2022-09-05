@@ -1,8 +1,8 @@
 .cursor
     position: absolute
     z-index: 9999
-    width: 15px
-    height: 15px
+    width: 10px
+    height: 10px
     opacity: 1
     border-radius: 50%
     background-color: $background-color
@@ -12,12 +12,12 @@
     transition: width 300ms, height 300ms
 
 .cursor-hover
-    width: 30px
-    height: 30px
+    width: 20px
+    height: 20px
 
 .cursor-active
-    width: 35px
-    height: 35px
+    width: 30px
+    height: 30px
 
 .ring
     position: absolute
@@ -25,10 +25,10 @@
     width: 30px
     height: 30px
     border-radius: 50%
-    opacity: .5
-    border: 1px solid $background-color
+    opacity: 1
+    border: 2px solid $background-color
     mix-blend-mode: difference
     transform: translate(-50%, -50%)
-    transition: all 200ms ease-out
+    transition: all 100ms ease-out
     pointer-events: none
     will-change: transform

@@ -1,95 +1,327 @@
 {
     "title": "Margot Robbie",
-    "biography": "Margot Elise Robbie is an Australian actress and producer. Known for her roles in both blockbusters and independent films, she has received several accolades, including nominations for two Academy Awards, three Golden Globe Awards, and five British Academy Film Awards.",
-    "awards": [
-        {
-            "title": "Empire Awards",
-            "date": "2014",
-            "film": "The Wolf of Wall Street"
-        },
-        {
-            "title": "People's Choice Awards",
-            "date": "2017",
-            "film": "Suicide Squad"
-        }
-    ],
-    "films": [
-        {
-            "Neighbours": "The Wolf of Wall Street",
-            "genre": "Biopic",
-            "release": "2013",
-            "description": ""
-        },
-        {
-            "Neighbours": "Suicide Squad",
-            "genre": "Superhero",
-            "release": "2016",
-            "description": ""
-        },
-        {
-            "Neighbours": "I, Tonya",
-            "genre": "Biopic",
-            "release": "2017",
-            "description": ""
-        },
-        {
-            "Neighbours": "Once Upon a Time… in Hollywood",
-            "genre": "Comedy-drama",
-            "release": "2019",
-            "description": ""
-        },
-        {
-            "Neighbours": "Bombshell",
-            "genre": "Drama",
-            "release": "2019",
-            "description": ""
-        },
-        {
-            "Neighbours": "Birds of Prey",
-            "genre": "Superhero",
-            "release": "2020",
-            "description": ""
-        },
-        {
-            "Neighbours": "The Suicide Squad",
-            "genre": "Superhero",
-            "release": "2021",
-            "description": ""
-        }
-    ],
-    "videos": [
-        {
-            "title": "73 Questions With Margot Robbie | Vogue",
-            "link": "https://www.youtube.com/watch?v=Bl5630CeYFs"
-        },
-        {
-            "title": "Maid | Margot Robbie and Margaret Qualley Discuss Impactful Limited Series | Netflix",
-            "link": "https://www.youtube.com/watch?v=UYQ_Qh-NDLE"
-        },
-        {
-            "title": "Guest Host Chris Pratt Interviews Margot Robbie",
-            "link": "https://www.youtube.com/watch?v=KjICBHj1EzM"
-        },
-        {
-            "title": "Will Smith & Margot Robbie Insult Each Other | CONTAINS STRONG LANGUAGE!",
-            "link": "https://www.youtube.com/watch?v=yKC7vOhr2vM"
-        }
-    ],
-    "networks": [
-        {
-            "website": "Facebook",
-            "link": "https://www.facebook.com/MargotRobbie/",
-            "official": true
-        },
-        {
-            "website": "Instagram",
-            "link": "https://www.instagram.com/margotrobbieofficial/",
-            "official": false
-        },
-        {
-            "website": "VKontakte",
-            "link": "https://vk.com/mrobbiedaily",
-            "official": false
-        }
-    ]
+    "biography": {
+        "title": "Biographie",
+        "content": "Margot Elise Robbie is an Australian actress and producer. Known for her roles in both blockbusters and independent films, she has received several accolades, including nominations for two Academy Awards, three Golden Globe Awards, and five British Academy Film Awards.",
+        "caption": "Margot Robbie Oxfam 2016"
+    },
+    "awards": {
+        "title": "awards",
+        "content": [
+            {
+                "title": "AACTA International Awards",
+                "category": "Best Film",
+                "date": "2021",
+                "desc": "Promising Young Woman",
+                "trailer": ""
+            },
+            {
+                "title": "Sant Jordi Awards",
+                "category": "Best Actress in a Foreign Film",
+                "date": "2020",
+                "desc": "Once Upon a Time in Hollywood",
+                "trailer": ""
+            },
+            {
+                "title": "AACTA International Awards",
+                "category": "Best Supporting Actress",
+                "date": "2020",
+                "desc": "Bombshell",
+                "trailer": ""
+            },
+            {
+                "title": "San Diego Film Critics Society",
+                "category": "Best Actress",
+                "date": "2017",
+                "desc": "I, Tonya",
+                "trailer": ""
+            },
+            {
+                "title": "Critics' Choice Movie Awards",
+                "category": "Best Actress",
+                "date": "2018",
+                "desc": "I, Tonya",
+                "trailer": ""
+            },
+            {
+                "title": "Alliance of Women Film Journalists",
+                "category": "Bravest Performance",
+                "date": "2018",
+                "desc": "I, Tonya",
+                "trailer": ""
+            },
+            {
+                "title": "AACTA International Awards",
+                "category": "Best Actress",
+                "date": "2018",
+                "desc": "I, Tonya",
+                "trailer": ""
+            },
+            {
+                "title": "San Francisco Bay Area Film Critics Circle",
+                "category": "Best Actress",
+                "date": "2017",
+                "desc": "I, Tonya",
+                "trailer": ""
+            },
+            {
+                "title": "People's Choise Awards",
+                "category": "Favorite Action Movie Actress",
+                "date": "2017",
+                "desc": "Suicide Squad",
+                "trailer": ""
+            },
+            {
+                "title": "New York Film Critics Online",
+                "category": "Best Actress",
+                "date": "2017",
+                "desc": "I, Tonya",
+                "trailer": ""
+            },
+            {
+                "title": "Hollywood Film Awards",
+                "category": "Hollywood Ensemble Award",
+                "date": "2017",
+                "desc": "I, Tonya",
+                "trailer": ""
+            },
+            {
+                "title": "Florida Film Critics Circle",
+                "category": "Best Actress",
+                "date": "2017",
+                "desc": "I, Tonya",
+                "trailer": ""
+            },
+            {
+                "title": "Critics' Choice Movie Awards",
+                "category": "Best actress",
+                "date": "2017",
+                "desc": "Suicide Squad",
+                "trailer": ""
+            },
+            {
+                "title": "Teen Choice Awards",
+                "category": "Choice Movie Actress",
+                "date": "2016",
+                "desc": "Suicide Squad",
+                "trailer": ""
+            },
+            {
+                "title": "Empire Awards",
+                "category": "Best Female Newcomer",
+                "date": "2014",
+                "desc": "The Wolf of Wall Street",
+                "trailer": ""
+            }
+        ]
+    },
+    "films": {
+        "title": "Notable films",
+        "content": [
+            {
+                "title": "The Suicide Squad",
+                "category": "Superhero",
+                "date": "2021",
+                "desc": "Trailer",
+                "trailer": ""
+            },
+            {
+                "title": "Peter Rabbit 2: The Runaway",
+                "category": "Animation",
+                "date": "2021",
+                "desc": "Trailer",
+                "trailer": ""
+            },
+            {
+                "title": "Promising Young Woman",
+                "category": "Thriller",
+                "date": "2020",
+                "desc": "Trailer",
+                "trailer": ""
+            },
+            {
+                "title": "Birds of Prey",
+                "category": "Superhero",
+                "date": "2020",
+                "desc": "Trailer",
+                "trailer": ""
+            },
+            {
+                "title": "Bombshell",
+                "category": "Drama",
+                "date": "2019",
+                "desc": "Trailer",
+                "trailer": ""
+            },
+            {
+                "title": "Once Upon a Time in Hollywood",
+                "category": "Comedy",
+                "date": "2019",
+                "desc": "Trailer",
+                "trailer": ""
+            },
+            {
+                "title": "Dreamland",
+                "category": "Thriller",
+                "date": "2019",
+                "desc": "Trailer",
+                "trailer": ""
+            },
+            {
+                "title": "Mary Queen of Scots",
+                "category": "Historical",
+                "date": "2018",
+                "desc": "Trailer",
+                "trailer": ""
+            },
+            {
+                "Neighbours": "Slaughterhouse Rulez",
+                "category": "Horror",
+                "date": "2018",
+                "desc": "Trailer",
+                "trailer": ""
+            },
+            {
+                "Neighbours": "Terminal",
+                "category": "Thriller",
+                "date": "2018",
+                "desc": "Trailer",
+                "trailer": ""
+            },
+            {
+                "Neighbours": "Flopsy Turvy",
+                "category": "Animation",
+                "date": "2018",
+                "desc": "Trailer",
+                "trailer": ""
+            },
+            {
+                "title": "Peter Rabbit",
+                "category": "Animation",
+                "date": "2018",
+                "desc": "Trailer",
+                "trailer": ""
+            },
+            {
+                "title": "Goodbye Christopher Robin",
+                "category": "Biopic",
+                "date": "2017",
+                "desc": "Trailer",
+                "trailer": ""
+            },
+            {
+                "title": "I, Tonya",
+                "category": "Biopic",
+                "date": "2017",
+                "desc": "Trailer",
+                "trailer": ""
+            },
+            {
+                "title": "Suicide Squad",
+                "category": "Superhero",
+                "date": "2016",
+                "desc": "Trailer",
+                "trailer": ""
+            },
+            {
+                "Neighbours": "The Legend of Tarzan",
+                "category": "Action",
+                "date": "2016",
+                "desc": "Trailer",
+                "trailer": ""
+            },
+            {
+                "Neighbours": "Whiskey Tango Foxtrot",
+                "category": "Drama",
+                "date": "2016",
+                "desc": "Trailer",
+                "trailer": ""
+            },
+            {
+                "Neighbours": "The Big Short",
+                "category": "Comedy",
+                "date": "2021",
+                "desc": "Trailer",
+                "trailer": ""
+            },
+            {
+                "title": "Suite Française",
+                "category": "Drama",
+                "date": "2015",
+                "desc": "Trailer",
+                "trailer": ""
+            },
+            {
+                "title": "Focus",
+                "category": "Comedy",
+                "date": "2015",
+                "desc": "Trailer",
+                "trailer": ""
+            },
+            {
+                "title": "Z for Zachariah",
+                "category": "Drama",
+                "date": "2015",
+                "desc": "Trailer",
+                "trailer": ""
+            },
+            {
+                "title": "The Wolf of Wall Street",
+                "category": "Comedy",
+                "date": "2013",
+                "desc": "Trailer",
+                "trailer": ""
+            },
+            {
+                "Neighbours": "About Time",
+                "category": "Drama",
+                "date": "2013",
+                "desc": "Trailer",
+                "trailer": ""
+            },
+            {
+                "Neighbours": "ICU",
+                "category": "Thriller",
+                "date": "2009",
+                "desc": "Trailer",
+                "trailer": ""
+            },
+            {
+                "Neighbours": "Vigilante",
+                "category": "Action",
+                "date": "2008",
+                "desc": "Trailer",
+                "trailer": ""
+            }
+        ]
+    },
+    "videos": {
+        "title": "Popular videos",
+        "content": [
+            "https://www.youtube.com/embed/Bl5630CeYFs",
+            "https://www.youtube.com/embed/UYQ_Qh-NDLE",
+            "https://www.youtube.com/embed/KjICBHj1EzM",
+            "https://www.youtube.com/embed/yKC7vOhr2vM"
+        ]
+    },
+    "networks": {
+        "title": "Social networks",
+        "content": [
+            {
+                "website": "Facebook",
+                "link": "https://www.facebook.com/MargotRobbie/",
+                "official": true
+            },
+            {
+                "website": "Instagram",
+                "link": "https://www.instagram.com/margotrobbieofficial/",
+                "official": false
+            },
+            {
+                "website": "VKontakte",
+                "link": "https://vk.com/mrobbiedaily",
+                "official": false
+            }
+        ]
+    }
 }

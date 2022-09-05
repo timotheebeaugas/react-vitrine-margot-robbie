@@ -9,11 +9,12 @@ import { Network } from "./components/Network.js";
 import { Video } from "./components/Video.js";
 
 function App() {
-  const [language, setLanguage] = useState("en");
-  const [content] = useI18n(language);
+  //const [language, setLanguage] = useState("en");
+  const [content, currentLanguage, setCurrentLanguage] = useI18n("en");
   const [waiting, setWaiting] = useState(false);
   const [waitingLanguage, setWaitingLanguage] = useState(false);
   const [isMobile] = useIsMobile();
+  const [swipe, setSwipe] = useState();
 
   ResizeDevice();
 
@@ -71,7 +72,7 @@ function App() {
       document.removeEventListener("wheel", wheelMove);
       clearInterval(interval);
     };
-  }, [waiting, waitingLanguage]);
+  }, [waiting, waitingLanguage, content]);
 
   const changeLanguage = () => {
     const activeLanguage = document.querySelector(".active-language");
@@ -93,7 +94,7 @@ function App() {
       );
       root.style.setProperty("--languages-position-y", language + "px");
       activeLanguage.classList.add("scroll-language");
-      setLanguage(language === "en" ? "fr" : "en");
+      setCurrentLanguage(currentLanguage === "en" ? "fr" : "en");
       setWaitingLanguage(true);
     }
   };
@@ -124,7 +125,33 @@ function App() {
     if (cursor.classList.value.includes("cursor-active")) {
       cursor.classList.remove("cursor-active");
     }
+    if (swipe) {
+      setSwipe(false);
+    }
   };
+
+  useEffect(() => {
+    const mousePosition = (event) => {
+      if (swipe) {
+        const element = document.querySelector("." + swipe.class);
+        let position = event.clientX - swipe.event.clientX + swipe.rect.left;
+        if (
+          position < 0 &&
+          position > window.innerWidth - element.scrollWidth
+        ) {
+          element.style.transform = "translateX(" + position + "px)";
+        }
+
+        console.log(position, window.innerWidth - element.scrollWidth);
+      }
+    };
+
+    document.addEventListener("mousemove", mousePosition);
+
+    return () => {
+      document.removeEventListener("mousemove", mousePosition);
+    };
+  }, [swipe]);
 
   return (
     <div className="App" onMouseDown={activeCursor} onMouseUp={unactiveCursor}>
@@ -133,7 +160,14 @@ function App() {
       <header>
         <div></div>
         <div className="title">
-          <h1> {content.title} </h1>
+          <h1
+            onClick={() => window.location.reload()}
+            onMouseEnter={cursorHover}
+            onMouseLeave={cursorNotHover}
+          >
+            {" "}
+            {content.title}{" "}
+          </h1>
         </div>
         <div
           className="languages"
@@ -165,24 +199,61 @@ function App() {
             </figure>
           </section>
           <section className="section">
-            <h2>{content.awards.title}</h2>
-            <div className="card-content">
-              {content.awards.content.map((content, i) => (
-                <Card props={{content, cursorHover, cursorNotHover}} key={i} />
+            <h2>{content.films.title}</h2>
+            <div
+              className="cards-content film"
+              onMouseDown={(event) =>
+                setSwipe({
+                  class: "film",
+                  event: event,
+                  rect: document.querySelector(".film").getBoundingClientRect(),
+                })
+              }
+            >
+              {content.films.content.map((content, i) => (
+                <Card
+                  props={{ content, cursorHover, cursorNotHover }}
+                  key={i}
+                />
               ))}
             </div>
           </section>
           <section className="section">
-            <h2>{content.films.title}</h2>
-            <div className="card-content">
-              {content.films.content.map((content, i) => (
-                <Card props={{content, cursorHover, cursorNotHover}} key={i} />
+            <h2>{content.awards.title}</h2>
+            <div
+              className="cards-content award"
+              onMouseDown={(event) =>
+                setSwipe({
+                  class: "award",
+                  event: event,
+                  rect: document
+                    .querySelector(".award")
+                    .getBoundingClientRect(),
+                })
+              }
+            >
+              {content.awards.content.map((content, i) => (
+                <Card
+                  props={{ content, cursorHover, cursorNotHover }}
+                  key={i}
+                />
               ))}
             </div>
           </section>
           <section className="section">
             <h2>{content.videos.title}</h2>
-            <div className="card-content">
+            <div
+              className="cards-content video"
+              onMouseDown={(event) =>
+                setSwipe({
+                  class: "video",
+                  event: event,
+                  rect: document
+                    .querySelector(".video")
+                    .getBoundingClientRect(),
+                })
+              }
+            >
               {/*             {content.videos.content.map((video, i) => (
               <Video props={video} key={i} />
             ))} */}
@@ -190,9 +261,23 @@ function App() {
           </section>
           <section className="section">
             <h2>{content.networks.title}</h2>
-            <div className="card-content">
+            <div
+              className="cards-content network"
+              onMouseDown={(event) =>
+                setSwipe({
+                  class: "network",
+                  event: event,
+                  rect: document
+                    .querySelector(".network")
+                    .getBoundingClientRect(),
+                })
+              }
+            >
               {content.networks.content.map((content, i) => (
-                <Network props={{content, cursorHover, cursorNotHover}} key={i} />
+                <Network
+                  props={{ content, cursorHover, cursorNotHover }}
+                  key={i}
+                />
               ))}
             </div>
           </section>

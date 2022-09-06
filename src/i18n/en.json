@@ -5,6 +5,211 @@
         "content": "Margot Elise Robbie is an Australian actress and producer. Known for her roles in both blockbusters and independent films, she has received several accolades, including nominations for two Academy Awards, three Golden Globe Awards, and five British Academy Film Awards.",
         "caption": "Margot Robbie Oxfam 2016"
     },
+    "films": {
+        "title": "Notable films",
+        "content": [
+            {
+                "title": "The Suicide Squad",
+                "category": "Superhero",
+                "date": "2021",
+                "desc": "Supervillains Harley Quinn, Bloodsport, Peacemaker, and a collection of nutty cons at Belle Reve prison join the super-secret, super-shady Task Force X as they are dropped off at the remote, enemy-infused island of Corto Maltese.",
+                "trailer": "https://www.youtube.com/watch?v=JuDLepNa7hw",
+                "text": "Play trailer"
+            },
+            {
+                "title": "Peter Rabbit 2: The Runaway",
+                "category": "Animation",
+                "date": "2021",
+                "desc": "Thomas and Bea are now married and living with Peter and his rabbit family. Bored of life in the garden, Peter goes to the big city, where he meets shady characters and ends up creating chaos for the whole family.",
+                "trailer": "https://www.youtube.com/watch?v=euGHcnyUo84",
+                "text": "Play trailer"
+            },
+            {
+                "title": "Promising Young Woman",
+                "category": "Thriller",
+                "date": "2020",
+                "desc": "A young woman, traumatized by a tragic event in her past, seeks out vengeance against those who crossed her path.",
+                "trailer": "https://www.youtube.com/watch?v=7i5kiFDunk8",
+                "text": "Play trailer"
+            },
+            {
+                "title": "Birds of Prey",
+                "category": "Superhero",
+                "date": "2020",
+                "desc": "After splitting with the Joker, Harley Quinn joins superheroines Black Canary, Huntress and Renee Montoya to save a young girl from an evil crime lord.",
+                "trailer": "https://www.youtube.com/watch?v=kGM4uYZzfu0",
+                "text": "Play trailer"
+            },
+            {
+                "title": "Bombshell",
+                "category": "Drama",
+                "date": "2019",
+                "desc": "A group of women take on Fox News head Roger Ailes and the toxic atmosphere he presided over at the network.",
+                "trailer": "https://www.youtube.com/watch?v=0rBnkBIhoFE",
+                "text": "Play trailer"
+            },
+            {
+                "title": "Once Upon a Time in Hollywood",
+                "category": "Comedy",
+                "date": "2019",
+                "desc": "A faded television actor and his stunt double strive to achieve fame and success in the final years of Hollywood's Golden Age in 1969 Los Angeles.",
+                "trailer": "https://www.youtube.com/watch?v=ELeMaP8EPAA",
+                "text": "Play trailer"
+            },
+            {
+                "title": "Dreamland",
+                "category": "Thriller",
+                "date": "2019",
+                "desc": "A teenager's adventures as a bounty hunter take an unexpected twist.",
+                "trailer": "https://www.youtube.com/watch?v=agn4t4SOB_0",
+                "text": "Play trailer"
+            },
+            {
+                "title": "Mary Queen of Scots",
+                "category": "Historical",
+                "date": "2018",
+                "desc": "Mary Stuart's (Saoirse Ronan's) attempt to overthrow her cousin Elizabeth I (Margot Robbie), Queen of England, finds her condemned to years of imprisonment before facing execution.",
+                "trailer": "https://www.youtube.com/watch?v=T5l8cvuo7IA",
+                "text": "Play trailer"
+            },
+            {
+                "title": "Slaughterhouse Rulez",
+                "category": "Horror",
+                "date": "2018",
+                "desc": "An illustrious British boarding school becomes a bloody battleground when a mysterious sinkhole appears at a nearby fracking site unleashing unspeakable horror.",
+                "trailer": "https://www.youtube.com/watch?v=xVzhqPC-CCM",
+                "text": "Play trailer"
+            },
+            {
+                "title": "Terminal",
+                "category": "Thriller",
+                "date": "2018",
+                "desc": "A film noir taking place in a train terminal at night. Add 2 male assassins, female assassin, waitress, teacher, janitor and crime boss. Add revenge. Who says mystery is a lost art?",
+                "trailer": "https://www.youtube.com/watch?v=18RqtFuaNe8",
+                "text": "Play trailer"
+            },
+            {
+                "title": "Flopsy Turvy",
+                "category": "Animation",
+                "date": "2018",
+                "desc": "A short film about rabbits in the world of the reimagined Peter Rabbit.",
+                "trailer": "https://www.youtube.com/watch?v=x1nwmL9-b8Q",
+                "text": "Play trailer"
+            },
+            {
+                "title": "Peter Rabbit",
+                "category": "Animation",
+                "date": "2018",
+                "desc": "A rebellious rabbit tries to sneak into a farmer's vegetable garden.",
+                "trailer": "https://www.youtube.com/watch?v=7Pa_Weidt08",
+                "text": "Play trailer"
+            },
+            {
+                "title": "Goodbye Christopher Robin",
+                "category": "Biopic",
+                "date": "2017",
+                "desc": "The relationship between writer AA Milne and his son, Christopher Robin, and how this became the inspiration for Winnie the Pooh.",
+                "trailer": "https://www.youtube.com/watch?v=uQq3aFSijRg",
+                "text": "Play trailer"
+            },
+            {
+                "title": "I, Tonya",
+                "category": "Biopic",
+                "date": "2017",
+                "desc": "Competitive ice skater Tonya Harding rises amongst the ranks at the U.S. Figure Skating Championships, but her future in the activity is thrown into doubt when her ex-husband intervenes.",
+                "trailer": "https://www.youtube.com/watch?v=OXZQ5DfSAAc",
+                "text": "Play trailer"
+            },
+            {
+                "title": "Suicide Squad",
+                "category": "Superhero",
+                "date": "2016",
+                "desc": "A secret government agency recruits some of the most dangerous incarcerated super-villains to form a defensive task force. Their first mission: save the world from the apocalypse.",
+                "trailer": "https://www.youtube.com/watch?v=CmRih_VtVAs",
+                "text": "Play trailer"
+            },
+            {
+                "title": "The Legend of Tarzan",
+                "category": "Action",
+                "date": "2016",
+                "desc": "Tarzan, having acclimated to life in London, is called back to his former home in the jungle to investigate the activities at a mining encampment.",
+                "trailer": "https://www.youtube.com/watch?v=3pwUsilvTUA",
+                "text": "Play trailer"
+            },
+            {
+                "title": "Whiskey Tango Foxtrot",
+                "category": "Drama",
+                "date": "2016",
+                "desc": "A journalist recounts her wartime coverage in Afghanistan.",
+                "trailer": "https://www.youtube.com/watch?v=2V8V6-VjnWw",
+                "text": "Play trailer"
+            },
+            {
+                "title": "Suite Française",
+                "category": "Drama",
+                "date": "2015",
+                "desc": "During the early years of Nazi occupation of France in World War II, romance blooms between Lucile Angellier (Michelle Williams), a French villager, and Lieutenant Bruno von Falk (Matthias Schoenaerts), a German soldier.",
+                "trailer": "https://www.youtube.com/watch?v=B-9B1gfvqLE",
+                "text": "Play trailer"
+            },
+            {
+                "title": "Focus",
+                "category": "Comedy",
+                "date": "2015",
+                "desc": "In the midst of veteran con man Nicky's latest scheme, a woman from his past - now an accomplished femme fatale - shows up and throws his plans for a loop.",
+                "trailer": "https://www.youtube.com/watch?v=MxCRgtdAuBo",
+                "text": "Play trailer"
+            },
+            {
+                "title": "The Big Short",
+                "category": "Comedy",
+                "date": "2021",
+                "desc": "In 2006-2007 a group of investors bet against the US mortgage market. In their research, they discover how flawed and corrupt the market is.",
+                "trailer": "https://www.youtube.com/watch?v=vgqG3ITMv1Q",
+                "text": "Play trailer"
+            },
+            {
+                "title": "Z for Zachariah",
+                "category": "Drama",
+                "date": "2015",
+                "desc": "In the wake of a disaster that wipes out most of civilization, two men and a young woman find themselves in an emotionally charged love triangle as the last known survivors.",
+                "trailer": "https://www.youtube.com/watch?v=bxw4KFxPcoY",
+                "text": "Play trailer"
+            },
+            {
+                "title": "The Wolf of Wall Street",
+                "category": "Comedy",
+                "date": "2013",
+                "desc": "Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.",
+                "trailer": "https://www.youtube.com/watch?v=iszwuX1AK6A",
+                "text": "Play trailer"
+            },
+            {
+                "title": "About Time",
+                "category": "Drama",
+                "date": "2013",
+                "desc": "At the age of 21, Tim discovers he can travel in time and change what happens and has happened in his own life. His decision to make his world a better place by getting a girlfriend turns out not to be as easy as you might think.",
+                "trailer": "https://www.youtube.com/watch?v=T7A810duHvw",
+                "text": "Play trailer"
+            },
+            {
+                "title": "ICU",
+                "category": "Thriller",
+                "date": "2009",
+                "desc": "A sadistic voyeuristic killer is stalking the city. 3 curious teenagers while spying on their neighbors believe they've discovered his identity. But when your holiday high rise apartment is filled with hidden CCTV cameras. WHO is really watching WHO?",
+                "trailer": "https://www.youtube.com/watch?v=c11Z_3GLvmo",
+                "text": "Play trailer"
+            },
+            {
+                "title": "Vigilante",
+                "category": "Action",
+                "date": "2008",
+                "desc": "When Luke is viciously attacked and his fiancée is raped and murdered, he pledges to train himself in deadly hand-to-hand combat and use it against any wrongdoers who dare cross his path.",
+                "trailer": "https://www.youtube.com/watch?v=LCjyX7VXdng",
+                "text": "Play trailer"
+            }
+        ]
+    },
     "awards": {
         "title": "awards",
         "content": [
@@ -13,285 +218,120 @@
                 "category": "Best Film",
                 "date": "2021",
                 "desc": "Promising Young Woman",
-                "trailer": ""
+                "trailer": "https://www.youtube.com/watch?v=7i5kiFDunk8",
+                "text": "Play trailer"
             },
             {
                 "title": "Sant Jordi Awards",
                 "category": "Best Actress in a Foreign Film",
                 "date": "2020",
                 "desc": "Once Upon a Time in Hollywood",
-                "trailer": ""
+                "trailer": "https://www.youtube.com/watch?v=ELeMaP8EPAA",
+                "text": "Play trailer"
             },
             {
                 "title": "AACTA International Awards",
                 "category": "Best Supporting Actress",
                 "date": "2020",
                 "desc": "Bombshell",
-                "trailer": ""
+                "trailer": "https://www.youtube.com/watch?v=0rBnkBIhoFE",
+                "text": "Play trailer"
             },
             {
                 "title": "San Diego Film Critics Society",
                 "category": "Best Actress",
                 "date": "2017",
                 "desc": "I, Tonya",
-                "trailer": ""
+                "trailer": "https://www.youtube.com/watch?v=OXZQ5DfSAAc",
+                "text": "Play trailer"
             },
             {
                 "title": "Critics' Choice Movie Awards",
                 "category": "Best Actress",
                 "date": "2018",
                 "desc": "I, Tonya",
-                "trailer": ""
+                "trailer": "https://www.youtube.com/watch?v=OXZQ5DfSAAc",
+                "text": "Play trailer"
             },
             {
                 "title": "Alliance of Women Film Journalists",
                 "category": "Bravest Performance",
                 "date": "2018",
                 "desc": "I, Tonya",
-                "trailer": ""
+                "trailer": "https://www.youtube.com/watch?v=OXZQ5DfSAAc",
+                "text": "Play trailer"
             },
             {
                 "title": "AACTA International Awards",
                 "category": "Best Actress",
                 "date": "2018",
                 "desc": "I, Tonya",
-                "trailer": ""
+                "trailer": "https://www.youtube.com/watch?v=OXZQ5DfSAAc",
+                "text": "Play trailer"
             },
             {
                 "title": "San Francisco Bay Area Film Critics Circle",
                 "category": "Best Actress",
                 "date": "2017",
                 "desc": "I, Tonya",
-                "trailer": ""
+                "trailer": "https://www.youtube.com/watch?v=OXZQ5DfSAAc",
+                "text": "Play trailer"
             },
             {
                 "title": "People's Choise Awards",
                 "category": "Favorite Action Movie Actress",
                 "date": "2017",
                 "desc": "Suicide Squad",
-                "trailer": ""
+                "trailer": "https://www.youtube.com/watch?v=CmRih_VtVAs",
+                "text": "Play trailer"
             },
             {
                 "title": "New York Film Critics Online",
                 "category": "Best Actress",
                 "date": "2017",
                 "desc": "I, Tonya",
-                "trailer": ""
+                "trailer": "https://www.youtube.com/watch?v=OXZQ5DfSAAc",
+                "text": "Play trailer"
             },
             {
                 "title": "Hollywood Film Awards",
                 "category": "Hollywood Ensemble Award",
                 "date": "2017",
                 "desc": "I, Tonya",
-                "trailer": ""
+                "trailer": "https://www.youtube.com/watch?v=OXZQ5DfSAAc",
+                "text": "Play trailer"
             },
             {
                 "title": "Florida Film Critics Circle",
                 "category": "Best Actress",
                 "date": "2017",
                 "desc": "I, Tonya",
-                "trailer": ""
+                "trailer": "https://www.youtube.com/watch?v=OXZQ5DfSAAc",
+                "text": "Play trailer"
             },
             {
                 "title": "Critics' Choice Movie Awards",
                 "category": "Best actress",
                 "date": "2017",
                 "desc": "Suicide Squad",
-                "trailer": ""
+                "trailer": "https://www.youtube.com/watch?v=CmRih_VtVAs",
+                "text": "Play trailer"
             },
             {
                 "title": "Teen Choice Awards",
                 "category": "Choice Movie Actress",
                 "date": "2016",
                 "desc": "Suicide Squad",
-                "trailer": ""
+                "trailer": "https://www.youtube.com/watch?v=CmRih_VtVAs",
+                "text": "Play trailer"
             },
             {
                 "title": "Empire Awards",
                 "category": "Best Female Newcomer",
                 "date": "2014",
                 "desc": "The Wolf of Wall Street",
-                "trailer": ""
-            }
-        ]
-    },
-    "films": {
-        "title": "Notable films",
-        "content": [
-            {
-                "title": "The Suicide Squad",
-                "category": "Superhero",
-                "date": "2021",
-                "desc": "pitch",
-                "trailer": "/"
-            },
-            {
-                "title": "Peter Rabbit 2: The Runaway",
-                "category": "Animation",
-                "date": "2021",
-                "desc": "pitch",
-                "trailer": "/"
-            },
-            {
-                "title": "Promising Young Woman",
-                "category": "Thriller",
-                "date": "2020",
-                "desc": "pitch",
-                "trailer": ""
-            },
-            {
-                "title": "Birds of Prey",
-                "category": "Superhero",
-                "date": "2020",
-                "desc": "pitch",
-                "trailer": ""
-            },
-            {
-                "title": "Bombshell",
-                "category": "Drama",
-                "date": "2019",
-                "desc": "pitch",
-                "trailer": ""
-            },
-            {
-                "title": "Once Upon a Time in Hollywood",
-                "category": "Comedy",
-                "date": "2019",
-                "desc": "pitch",
-                "trailer": ""
-            },
-            {
-                "title": "Dreamland",
-                "category": "Thriller",
-                "date": "2019",
-                "desc": "pitch",
-                "trailer": ""
-            },
-            {
-                "title": "Mary Queen of Scots",
-                "category": "Historical",
-                "date": "2018",
-                "desc": "pitch",
-                "trailer": ""
-            },
-            {
-                "title": "Slaughterhouse Rulez",
-                "category": "Horror",
-                "date": "2018",
-                "desc": "pitch",
-                "trailer": ""
-            },
-            {
-                "title": "Terminal",
-                "category": "Thriller",
-                "date": "2018",
-                "desc": "pitch",
-                "trailer": ""
-            },
-            {
-                "title": "Flopsy Turvy",
-                "category": "Animation",
-                "date": "2018",
-                "desc": "pitch",
-                "trailer": ""
-            },
-            {
-                "title": "Peter Rabbit",
-                "category": "Animation",
-                "date": "2018",
-                "desc": "pitch",
-                "trailer": ""
-            },
-            {
-                "title": "Goodbye Christopher Robin",
-                "category": "Biopic",
-                "date": "2017",
-                "desc": "pitch",
-                "trailer": ""
-            },
-            {
-                "title": "I, Tonya",
-                "category": "Biopic",
-                "date": "2017",
-                "desc": "pitch",
-                "trailer": ""
-            },
-            {
-                "title": "Suicide Squad",
-                "category": "Superhero",
-                "date": "2016",
-                "desc": "pitch",
-                "trailer": ""
-            },
-            {
-                "title": "The Legend of Tarzan",
-                "category": "Action",
-                "date": "2016",
-                "desc": "pitch",
-                "trailer": ""
-            },
-            {
-                "title": "Whiskey Tango Foxtrot",
-                "category": "Drama",
-                "date": "2016",
-                "desc": "pitch",
-                "trailer": ""
-            },
-            {
-                "title": "The Big Short",
-                "category": "Comedy",
-                "date": "2021",
-                "desc": "pitch",
-                "trailer": ""
-            },
-            {
-                "title": "Suite Française",
-                "category": "Drama",
-                "date": "2015",
-                "desc": "pitch",
-                "trailer": ""
-            },
-            {
-                "title": "Focus",
-                "category": "Comedy",
-                "date": "2015",
-                "desc": "pitch",
-                "trailer": ""
-            },
-            {
-                "title": "Z for Zachariah",
-                "category": "Drama",
-                "date": "2015",
-                "desc": "pitch",
-                "trailer": ""
-            },
-            {
-                "title": "The Wolf of Wall Street",
-                "category": "Comedy",
-                "date": "2013",
-                "desc": "pitch",
-                "trailer": ""
-            },
-            {
-                "title": "About Time",
-                "category": "Drama",
-                "date": "2013",
-                "desc": "pitch",
-                "trailer": ""
-            },
-            {
-                "title": "ICU",
-                "category": "Thriller",
-                "date": "2009",
-                "desc": "pitch",
-                "trailer": ""
-            },
-            {
-                "title": "Vigilante",
-                "category": "Action",
-                "date": "2008",
-                "desc": "pitch",
-                "trailer": ""
+                "trailer": "https://www.youtube.com/watch?v=iszwuX1AK6A",
+                "text": "Play trailer"
             }
         ]
     },
@@ -308,19 +348,28 @@
         "title": "Social networks",
         "content": [
             {
+                "background": "FB",
                 "website": "Facebook",
+                "category": "Official",
+                "desc": "Margot Robbie. Artist.",
                 "link": "https://www.facebook.com/MargotRobbie/",
-                "official": true
+                "text": "Direct link"
             },
             {
+                "background": "IG",
                 "website": "Instagram",
+                "category": "Unofficial",
+                "desc": "The biggest fanpage on instagram of Margot Robbie.",
                 "link": "https://www.instagram.com/margotrobbieofficial/",
-                "official": false
+                "text": "Direct link"
             },
             {
+                "background": "VK",
                 "website": "VKontakte",
+                "category": "Unofficial",
+                "desc": "Margot Robbie Daily",
                 "link": "https://vk.com/mrobbiedaily",
-                "official": false
+                "text": "Direct link"
             }
         ]
     }

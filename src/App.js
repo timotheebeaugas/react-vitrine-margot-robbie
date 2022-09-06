@@ -135,14 +135,13 @@ function App() {
       if (swipe) {
         const element = document.querySelector("." + swipe.class);
         let position = event.clientX - swipe.event.clientX + swipe.rect.left;
+        console.log( event.clientX, swipe.event.clientX, swipe.rect.left,  window.innerWidth, element.scrollWidth);
         if (
           position < 0 &&
           position > window.innerWidth - element.scrollWidth
         ) {
           element.style.transform = "translateX(" + position + "px)";
         }
-
-        console.log(position, window.innerWidth - element.scrollWidth);
       }
     };
 

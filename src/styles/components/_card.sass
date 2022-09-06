@@ -1,28 +1,38 @@
 .cards-content
-  height: 300px
   display: flex
   justify-content: flex-start
   overflow: visible
-/*   .card
+  article
+    border: solid 3px rgba($second-color, 0.25)
+    padding: 5px
     &:nth-child(2n)
-      background-color: rgba($second-color, .25) */
-
+      background-color: rgba($second-color, 0.25)
+      
 .card
-  height: 300px
-  width: 200px
-  display: grid
-  grid-template-rows: 100px 200px
+  height: 350px
+  width: 250px
   margin: 0px 10px
 
 h3
   font-weight: bold
+  font-size: 28px
 
 .card-date
   font-weight: bold
   font-size: 100px
-  text-align: center
   color: $first-color
   opacity: .25
+
+.card-informations
+  div
+    margin: 10px 0px
+
+.card-category
+  background-color: $first-color
+  color: $background-color
+  line-height: 1em
+  padding: 5px
+  border-radius: 5px
 
 .card-detail
   margin: 0px

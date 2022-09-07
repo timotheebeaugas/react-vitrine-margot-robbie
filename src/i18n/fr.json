@@ -348,28 +348,22 @@
         "title": "Social networks",
         "content": [
             {
-                "background": "FB",
+                "icon": "fb",
                 "website": "Facebook",
-                "category": "Official",
-                "desc": "Margot Robbie. Artist.",
-                "link": "https://www.facebook.com/MargotRobbie/",
-                "text": "Direct link"
+                "desc": "MargotRobbie",
+                "link": "https://www.facebook.com/MargotRobbie/"
             },
             {
-                "background": "IG",
+                "icon": "ig",
                 "website": "Instagram",
-                "category": "Unofficial",
-                "desc": "The biggest fanpage on instagram of Margot Robbie.",
-                "link": "https://www.instagram.com/margotrobbieofficial/",
-                "text": "Direct link"
+                "desc": "margotrobbieofficial",
+                "link": "https://www.instagram.com/margotrobbieofficial/"
             },
             {
-                "background": "VK",
+                "icon": "vk",
                 "website": "VKontakte",
-                "category": "Unofficial",
-                "desc": "Margot Robbie Daily",
-                "link": "https://vk.com/mrobbiedaily",
-                "text": "Direct link"
+                "desc": "mrobbiedaily",
+                "link": "https://vk.com/mrobbiedaily"
             }
         ]
     }

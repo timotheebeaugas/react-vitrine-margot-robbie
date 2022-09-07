@@ -135,7 +135,13 @@ function App() {
       if (swipe) {
         const element = document.querySelector("." + swipe.class);
         let position = event.clientX - swipe.event.clientX + swipe.rect.left;
-        console.log( event.clientX, swipe.event.clientX, swipe.rect.left,  window.innerWidth, element.scrollWidth);
+        console.log(
+          event.clientX,
+          swipe.event.clientX,
+          swipe.rect.left,
+          window.innerWidth,
+          element.scrollWidth
+        );
         if (
           position < 0 &&
           position > window.innerWidth - element.scrollWidth
@@ -191,14 +197,18 @@ function App() {
         </div>
         <div className="content">
           <section className="section">
+          <div className="subtitle">     
             <h2>{content.biography.title}</h2>
+          </div>
             <p>{content.biography.content}</p>
             <figure>
               <div className="portrait" alt={content.biography.legend} />
             </figure>
           </section>
           <section className="section">
-            <h2>{content.films.title}</h2>
+            <div className="subtitle">
+              <h2>{content.films.title}</h2>
+            </div>
             <div
               className="cards-content film"
               onMouseDown={(event) =>
@@ -218,7 +228,10 @@ function App() {
             </div>
           </section>
           <section className="section">
-            <h2>{content.awards.title}</h2>
+            <div className="subtitle">
+              <h2>{content.awards.title}</h2>
+            </div>
+
             <div
               className="cards-content award"
               onMouseDown={(event) =>
@@ -240,7 +253,9 @@ function App() {
             </div>
           </section>
           <section className="section">
-            <h2>{content.videos.title}</h2>
+            <div className="subtitle">
+              <h2>{content.videos.title}</h2>
+            </div>
             <div
               className="cards-content video"
               onMouseDown={(event) =>
@@ -253,25 +268,14 @@ function App() {
                 })
               }
             >
-              {/*             {content.videos.content.map((video, i) => (
-              <Video props={video} key={i} />
-            ))} */}
+              {content.videos.content.map((video, i) => (
+                <Video props={video} key={i} />
+              ))}
             </div>
           </section>
           <section className="section">
             <h2>{content.networks.title}</h2>
-            <div
-              className="cards-content network"
-              onMouseDown={(event) =>
-                setSwipe({
-                  class: "network",
-                  event: event,
-                  rect: document
-                    .querySelector(".network")
-                    .getBoundingClientRect(),
-                })
-              }
-            >
+            <div className="network-content">
               {content.networks.content.map((content, i) => (
                 <Network
                   props={{ content, cursorHover, cursorNotHover }}

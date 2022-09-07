@@ -1,0 +1,41 @@
+footer
+  z-index: 1
+  min-width: 100%
+  background-color: $first-color
+  color: $background-color
+  display: flex
+  justify-content: center
+  align-items: center
+  text-align: center
+
+  &:hover .cursor
+    background-color: red
+    width: 100px
+    height: 100px
+
+  nav
+    display: flex
+    justify-content: center
+
+.items
+  overflow: hidden
+  position: relative
+  height: 1em
+  width: 1em
+
+.pagination
+  transform: translateY(var(--page-position-y))
+  width: 1em
+  position: absolute
+  display: grid
+  grid-template-rows: repeat(5, 1fr)
+
+.bullet
+  background-color: $background-color
+  border-radius: 50%
+  width: 0.33em
+  height: 0.33em
+  margin: auto 0
+
+.scroll-page
+  animation: scroll-page 1s ease forwards

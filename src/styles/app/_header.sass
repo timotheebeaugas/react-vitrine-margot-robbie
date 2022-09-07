@@ -1,0 +1,47 @@
+header
+  z-index: 1
+  background-color: $first-color
+  color: $background-color
+  min-width: 100%
+  display: grid
+  grid-template-columns: 1fr 5fr 1fr
+
+.title
+  display: flex
+  justify-content: center
+  align-items: center
+
+h1
+  font-size: 2em
+
+.item-language
+  overflow: hidden
+  position: relative
+  height: 1.5em
+  width: 1.5em
+
+.languages
+  display: flex
+  justify-content: center
+  align-items: center
+
+.active-language
+  transform: translateY(var(--languages-position-y))
+  position: absolute
+  display: grid
+  grid-template-rows: repeat(2, 1fr)
+  &:nth-child(1)
+    grid-row: 1
+  &:nth-child(2)
+    grid-row: 2
+  span
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 1em
+    width: 1em
+    padding: 0.25em
+    text-transform: uppercase
+
+.scroll-language
+  animation: scroll-language 1s ease forwards

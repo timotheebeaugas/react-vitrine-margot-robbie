@@ -1,0 +1,82 @@
+main
+  overflow: hidden
+  animation: fade-in 3s ease forwards
+
+.content
+  transform: translateY(var(--position-y))
+  position: absolute
+
+.section
+  height: 100vh
+  width: 100vw
+
+.subtitle
+    width: 100%
+
+h2
+  color: first-color
+  margin: $margin
+  text-align: center
+  position: relative
+  &:before
+    position: absolute
+    top: 50%
+    left: 0px
+    display: block
+    content: ""
+    background-color: $first-color
+    width: 25%
+    height: 1px
+    margin: 0px $margin
+  &:after
+    position: absolute
+    top: 50%
+    right: 0px
+    display: block
+    content: ""
+    background-color: $first-color
+    width: 25%
+    height: 1px
+    margin: 0px $margin
+    
+.portrait
+  position: relative
+  height: 300px
+  width: 300px
+  border-radius: 50%
+  background-image: url("../.././assets/images/margot-robbie.png")
+  background-size: 100%
+  background-repeat: no-repeat
+  display: flex
+  justify-content: center
+  align-items: flex-end
+  &:before
+    content: ''
+    z-index: -1
+    height: 95%
+    width: 95%
+    border-radius: 50%
+    background-color: rgba($second-color, 0.25)
+    border: $border
+
+.scroll
+  animation: scroll 1s ease forwards
+
+svg
+  fill: $first-color
+
+a
+  text-decoration: none
+  cursor: none
+  color: $first-color
+    
+.cards-content
+  display: flex
+  justify-content: flex-start
+  overflow: visible
+
+.network-content
+  width: 100%
+  display: flex
+  justify-content: space-around
+  align-content: center

@@ -1,42 +1,64 @@
-.cards-content
-  display: flex
-  justify-content: flex-start
-  overflow: visible
-  article
-    border: solid 3px rgba($second-color, 0.25)
-    padding: 5px
-    &:nth-child(2n)
-      background-color: rgba($second-color, 0.25)
-      
 .card
   height: 350px
   width: 250px
-  margin: 0px 10px
-
-h3
-  font-weight: bold
-  font-size: 28px
+  margin: 0px $margin
+  border: $border
+  padding: 5px
+  display: grid
+  grid-template-rows: 100px 70px 24px 122px 34px
+  grid-gap: 0px
+  &:nth-child(2n)
+    background-color: rgba($second-color, 0.25)
+  a
+    position: relative
+    font-weight: bold
+    padding-bottom: 5px
+    &:after
+      background: none repeat scroll 0 0 transparent
+      bottom: 0
+      content: ""
+      display: block
+      height: 2px
+      width: 0px
+      left: 50%
+      position: absolute
+      background: $first-color
+      transition: width 0.3s ease 0s, left 0.3s ease 0s
+    &:hover:after
+      width: 100%
+      left: 0
 
 .card-date
+  grid-row: 1
   font-weight: bold
   font-size: 100px
   color: $first-color
   opacity: .25
 
-.card-informations
-  div
-    margin: 10px 0px
+.card-title
+  grid-row: 2
+  h3
+    font-weight: bold
+    font-size: 24px
+    margin: $margin 0px
 
 .card-category
+  grid-row: 3
   background-color: $first-color
   color: $background-color
-  line-height: 1em
-  padding: 5px
-  border-radius: 5px
+  line-height: 16px
+  display: flex
+  align-items: center
+  padding: 0px 0px 0px 10px
 
-.card-detail
-  margin: 0px
-  font-style: italic
+.card-description
+  grid-row: 4
+  padding: $margin 0px
+  overflow: hidden
 
+.card-trailer
+  grid-row: 5
+  display: flex
+  align-items: center
+  justify-content: center
 
-      

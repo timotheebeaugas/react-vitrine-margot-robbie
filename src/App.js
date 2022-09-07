@@ -275,7 +275,7 @@ function App() {
           </section>
           <section className="section">
             <h2>{content.networks.title}</h2>
-            <div className="network-content">
+            <div className="networks-content">
               {content.networks.content.map((content, i) => (
                 <Network
                   props={{ content, cursorHover, cursorNotHover }}

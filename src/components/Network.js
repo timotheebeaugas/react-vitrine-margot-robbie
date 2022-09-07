@@ -6,28 +6,30 @@ export const Network = ({ props }) => {
   const { content, cursorHover, cursorNotHover } = props;
 
   return (
-    <a
-      href={content.link}
-      target="_blank"
-      rel="noopener noreferrer"
-      onMouseEnter={cursorHover}
-      onMouseLeave={cursorNotHover}
-    >
-      <article className="network">
-        <div className="network-logo">
-          {
+    <article className="network">
+      <a
+        href={content.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        onMouseEnter={cursorHover}
+        onMouseLeave={cursorNotHover}
+      >
+        <div className="network-content">
+          <div className="network-logo">
             {
-              fb: <FB />,
-              ig: <IG />,
-              vk: <VK />,
-            }[content.icon]
-          }
+              {
+                fb: <FB />,
+                ig: <IG />,
+                vk: <VK />,
+              }[content.icon]
+            }
+          </div>
+          <div className="network-title">
+            <h3>{content.website}</h3>
+          </div>
+          <div className="network-description">{content.desc}</div>
         </div>
-        <div className="network-title">
-          <h3>{content.website}</h3>
-        </div>
-        <div className="network-description">{content.desc}</div>
-      </article>
-    </a>
+      </a>
+    </article>
   );
 };

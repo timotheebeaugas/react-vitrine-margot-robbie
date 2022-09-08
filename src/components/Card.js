@@ -17,6 +17,7 @@ export const Card = ({ props }) => {
             rel="noopener noreferrer"
             onMouseEnter={cursorHover}
             onMouseLeave={cursorNotHover}
+            className="link"
           >
             {content.text}
           </a>

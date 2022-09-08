@@ -7,8 +7,17 @@ main
     position: absolute
 
 .section
-    height: 100vh
+    height: calc(100vh - 70px - 35px)
     width: 100vw
+    padding: 70px 0px 35px 0px
+
+.section-content
+    height: 100%
+    width: 100%
+    display: flex
+    flex-wrap: wrap
+    align-content: center
+    justify-content: center
 
 .subtitle
     width: 100%
@@ -16,28 +25,30 @@ main
 h2
     color: first-color
     margin: $margin
-    text-align: center
-    position: relative
-    &:before
-        position: absolute
-        top: 50%
-        left: 0px
-        display: block
-        content: ""
-        background-color: $first-color
-        width: 25%
-        height: 1px
-        margin: 0px $margin
+    display: flex
+    align-items: center
     &:after
-        position: absolute
-        top: 50%
+        flex: 1
+        transform: translateY(-5%)
         right: 0px
-        display: block
         content: ""
         background-color: $first-color
-        width: 25%
         height: 1px
         margin: 0px $margin
+
+aside
+    width: 300px
+    margin: 0px 50px
+    @media screen and (min-width: $medium)
+        order: 1
+    @media screen and (max-width: $medium)
+        order: 0
+    p
+        text-align: center
+        color: $second-color
+
+figure
+    margin: 0px
 
 .portrait
     position: relative
@@ -58,6 +69,13 @@ h2
         border-radius: 50%
         background-color: rgba($second-color, 0.25)
         border: $border
+
+.biography-content
+    max-width: 1000px
+    @media screen and (min-width: $medium)
+        margin: 0px 50px
+    @media screen and (max-width: $medium)
+        margin: 0px
 
 .scroll
     animation: scroll 1s ease forwards
@@ -84,3 +102,21 @@ a
     margin: $margin
 
 
+.link
+    position: relative
+    font-weight: bold
+    padding-bottom: 5px
+    &:after
+        background: none repeat scroll 0 0 transparent
+        bottom: 0
+        content: ""
+        display: block
+        height: 2px
+        width: 0px
+        left: 50%
+        position: absolute
+        background: $first-color
+        transition: width 0.3s ease 0s, left 0.3s ease 0s
+    &:hover:after
+        width: 100%
+        left: 0

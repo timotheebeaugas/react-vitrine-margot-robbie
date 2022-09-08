@@ -3,16 +3,17 @@
   transform: skewY(-5deg)
   index: -999
   left: 10%
+  top: -2%
 
 .animate-text
   text-transform: uppercase
   line-height: 0.75
   font-weight: 800
-  font-size: 66vh
+  font-size: 60vh
   opacity: .25
   color: $background-color
   white-space: nowrap
   text-shadow: -1px -1px 0 $second-color, 1px -1px 0 $second-color, -1px 1px 0 $second-color, 1px 1px 0 $second-color
   animation: text-scrolling 60s linear infinite
-  &:last-child
+  &:nth-child(odd)
     animation-direction: reverse

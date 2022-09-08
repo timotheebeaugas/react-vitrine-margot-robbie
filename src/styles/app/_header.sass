@@ -1,7 +1,9 @@
 header
+  position: fixed
+  top: 0px
+  height: 70px
   z-index: 1
-  background-color: $first-color
-  color: $background-color
+  color: $first-color
   min-width: 100%
   display: grid
   grid-template-columns: 1fr 5fr 1fr
@@ -10,20 +12,24 @@ header
   display: flex
   justify-content: center
   align-items: center
+  margin: $margin
 
 h1
-  font-size: 2em
+  font-size: 28px
+  margin: 0
 
 .item-language
   overflow: hidden
   position: relative
-  height: 1.5em
-  width: 1.5em
+  height: 24px
+  width: 24px
+  font-size: 18px
 
 .languages
   display: flex
   justify-content: center
   align-items: center
+  font-weight: bold
 
 .active-language
   transform: translateY(var(--languages-position-y))
@@ -38,9 +44,9 @@ h1
     display: flex
     justify-content: center
     align-items: center
-    height: 1em
-    width: 1em
-    padding: 0.25em
+    height: 16px
+    width: 16px
+    padding: 4px
     text-transform: uppercase
 
 .scroll-language

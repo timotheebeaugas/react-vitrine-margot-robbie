@@ -1,5 +1,5 @@
-export const Video = (video) => {
-  const src = video.props;
+export const Video = (content) => {
+  const src = content.props;
 
   return (
     <div className="card-video">

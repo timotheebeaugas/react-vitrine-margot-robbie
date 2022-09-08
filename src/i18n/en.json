@@ -2,7 +2,13 @@
     "title": "Margot Robbie",
     "biography": {
         "title": "Biography",
-        "content": "Margot Elise Robbie is an Australian actress and producer. Known for her roles in both blockbusters and independent films, she has received several accolades, including nominations for two Academy Awards, three Golden Globe Awards, and five British Academy Film Awards.",
+        "paragraphs": [
+            "Margot Elise Robbie (born 2 July 1990) is an Australian actress and producer. Known for her roles in both blockbusters and independent films, she has received several accolades, including nominations for two Academy Awards, three Golden Globe Awards, and five British Academy Film Awards. Time magazine named her one of the 100 most influential people in the world in 2017 and she was ranked as one of the world's highest-paid actresses by Forbes in 2019.",
+            "Born and raised in Queensland, Robbie began her career on the television series Neighbours (2008–2011, 2022) and Pan Am (2011–2012). Her breakthrough came in 2013 with the black comedy film The Wolf of Wall Street. She achieved wider recognition with starring roles as Jane Porter in The Legend of Tarzan (2016) and Harley Quinn in the DC superhero films Suicide Squad (2016), Birds of Prey (2020) and The Suicide Squad (2021).",
+            "Robbie received critical acclaim and a nomination for the Academy Award for Best Actress for her portrayal of disgraced figure skater Tonya Harding in the biopic I, Tonya (2017). This acclaim continued with her roles as Queen Elizabeth I in the period drama Mary Queen of Scots (2018), Sharon Tate in the comedy-drama Once Upon a Time in Hollywood (2019), and a fictional Fox News employee in the drama Bombshell (2019); she received BAFTA Award nominations for all three and a nomination for the Academy Award for Best Supporting Actress for the lattermost.",
+            "Robbie is married to filmmaker Tom Ackerley. They are co-founders of the production company LuckyChap Entertainment, under which they have produced several films, including Promising Young Woman (2020), as well as the television series Dollface (2019–2022) and the miniseries Maid (2021)."
+        ],
+        "source": "https://en.wikipedia.org/wiki/Margot_Robbie",
         "caption": "Margot Robbie Oxfam 2016"
     },
     "films": {
@@ -366,7 +372,7 @@
                 "link": "https://vk.com/mrobbiedaily"
             },
             {
-                "icon": "ig",
+                "icon": "msg",
                 "website": "Instagram",
                 "desc": "Theeb",
                 "link": "https://www.instagram.com/theeb.fr/"

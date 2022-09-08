@@ -7,6 +7,7 @@ import { useIsMobile } from "./utils/hooks/isMobile.js";
 import { Card } from "./components/Card.js";
 import { Network } from "./components/Network.js";
 import { Video } from "./components/Video.js";
+import { Biography } from "./components/Biography.js";
 
 function App() {
   //const [language, setLanguage] = useState("en");
@@ -165,14 +166,12 @@ function App() {
       <header>
         <div></div>
         <div className="title">
-          <h1
-            onClick={() => window.location.reload()}
-            onMouseEnter={cursorHover}
-            onMouseLeave={cursorNotHover}
-          >
-            {" "}
-            {content.title}{" "}
-          </h1>
+          <a href="/" className="link">
+            <h1 onMouseEnter={cursorHover} onMouseLeave={cursorNotHover}>
+              {" "}
+              {content.title}{" "}
+            </h1>
+          </a>
         </div>
         <div
           className="languages"
@@ -189,99 +188,129 @@ function App() {
         </div>
       </header>
 
-      <main className="move">
+      <main>
         <div className="bg-text-container">
-          {[1, 2].map((e) => (
+          {[1, 2, 3].map((e) => (
             <Background props={content} key={e} />
           ))}
         </div>
         <div className="content">
           <section className="section">
-          <div className="subtitle">     
-            <h2>{content.biography.title}</h2>
-          </div>
-            <p>{content.biography.content}</p>
-            <figure>
-              <div className="portrait" alt={content.biography.legend} />
-            </figure>
+            <div className="subtitle">
+              <h2>{content.biography.title}</h2>
+            </div>
+            <div className="section-content">
+              <aside>
+                <figure>
+                  <div className="portrait" alt={content.biography.caption} />
+                </figure>
+                <p>{content.biography.caption}</p>
+              </aside>
+              <div className="biography-content">
+                {content.biography.paragraphs.map((content, i) => (
+                  <Biography props={content} key={i} />
+                ))}
+                <p>
+                  <a
+                    href={content.biography.source}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onMouseEnter={cursorHover}
+                    onMouseLeave={cursorNotHover}
+                    className="link"
+                  >
+                    Wikipedia
+                  </a>
+                </p>
+              </div>
+            </div>
           </section>
           <section className="section">
             <div className="subtitle">
               <h2>{content.films.title}</h2>
             </div>
-            <div
-              className="cards-content film"
-              onMouseDown={(event) =>
-                setSwipe({
-                  class: "film",
-                  event: event,
-                  rect: document.querySelector(".film").getBoundingClientRect(),
-                })
-              }
-            >
-              {content.films.content.map((content, i) => (
-                <Card
-                  props={{ content, cursorHover, cursorNotHover }}
-                  key={i}
-                />
-              ))}
+            <div className="section-content">
+              <div
+                className="cards-content film"
+                onMouseDown={(event) =>
+                  setSwipe({
+                    class: "film",
+                    event: event,
+                    rect: document
+                      .querySelector(".film")
+                      .getBoundingClientRect(),
+                  })
+                }
+              >
+                {content.films.content.map((content, i) => (
+                  <Card
+                    props={{ content, cursorHover, cursorNotHover }}
+                    key={i}
+                  />
+                ))}
+              </div>
             </div>
           </section>
           <section className="section">
             <div className="subtitle">
               <h2>{content.awards.title}</h2>
             </div>
-
-            <div
-              className="cards-content award"
-              onMouseDown={(event) =>
-                setSwipe({
-                  class: "award",
-                  event: event,
-                  rect: document
-                    .querySelector(".award")
-                    .getBoundingClientRect(),
-                })
-              }
-            >
-              {content.awards.content.map((content, i) => (
-                <Card
-                  props={{ content, cursorHover, cursorNotHover }}
-                  key={i}
-                />
-              ))}
+            <div className="section-content">
+              <div
+                className="cards-content award"
+                onMouseDown={(event) =>
+                  setSwipe({
+                    class: "award",
+                    event: event,
+                    rect: document
+                      .querySelector(".award")
+                      .getBoundingClientRect(),
+                  })
+                }
+              >
+                {content.awards.content.map((content, i) => (
+                  <Card
+                    props={{ content, cursorHover, cursorNotHover }}
+                    key={i}
+                  />
+                ))}
+              </div>
             </div>
           </section>
           <section className="section">
             <div className="subtitle">
               <h2>{content.videos.title}</h2>
             </div>
-            <div
-              className="cards-content video"
-              onMouseDown={(event) =>
-                setSwipe({
-                  class: "video",
-                  event: event,
-                  rect: document
-                    .querySelector(".video")
-                    .getBoundingClientRect(),
-                })
-              }
-            >
-              {content.videos.content.map((video, i) => (
-                <Video props={video} key={i} />
-              ))}
+            <div className="section-content">
+              <div
+                className="cards-content video"
+                onMouseDown={(event) =>
+                  setSwipe({
+                    class: "video",
+                    event: event,
+                    rect: document
+                      .querySelector(".video")
+                      .getBoundingClientRect(),
+                  })
+                }
+              >
+                {content.videos.content.map((content, i) => (
+                  <Video props={content} key={i} />
+                ))}
+              </div>
             </div>
           </section>
           <section className="section">
             <h2>{content.networks.title}</h2>
-            <div className="networks-content">
-              {content.networks.content.map((content, i) => (
-                <Network
-                  props={{ content, cursorHover, cursorNotHover }}
-                  key={i}
-                />
-              ))}
+            <div className="section-content">
+              <div className="networks-content">
+                {content.networks.content.map((content, i) => (
+                  <Network
+                    props={{ content, cursorHover, cursorNotHover }}
+                    key={i}
+                  />
+                ))}
+              </div>
             </div>
           </section>
         </div>

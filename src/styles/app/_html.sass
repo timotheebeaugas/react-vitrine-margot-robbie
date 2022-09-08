@@ -1,12 +1,20 @@
 body, html, #root, .App
-  min-height: 100vh
-  min-width: 100vw
+  position: relative
+  width: 100vw
+  height: 100vh
   margin: 0px
   overflow: hidden
   cursor: none
   user-select: none
   background-color: $background-color
 
-.App
+/* .App
   display: grid
-  grid-template-rows: [header]1fr [main]6fr [footer]0.5fr
+  grid-template-rows: [header]70px [main]6fr [footer]70px
+  &:nth-child(1)
+    grid-row: 1
+  &:nth-child(2)
+    grid-row: 2
+  &:nth-child(3)
+    grid-row: 3 */
+

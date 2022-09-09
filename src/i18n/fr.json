@@ -1,7 +1,13 @@
 {
     "title": "Margot Robbie",
+    "categories": [
+        "Biography",
+        "Notable films",
+        "Awards",
+        "Popular videos",
+        "Social networks"
+    ],
     "biography": {
-        "title": "Biography",
         "paragraphs": [
             "Margot Elise Robbie (born 2 July 1990) is an Australian actress and producer. Known for her roles in both blockbusters and independent films, she has received several accolades, including nominations for two Academy Awards, three Golden Globe Awards, and five British Academy Film Awards. Time magazine named her one of the 100 most influential people in the world in 2017 and she was ranked as one of the world's highest-paid actresses by Forbes in 2019.",
             "Born and raised in Queensland, Robbie began her career on the television series Neighbours (2008–2011, 2022) and Pan Am (2011–2012). Her breakthrough came in 2013 with the black comedy film The Wolf of Wall Street. She achieved wider recognition with starring roles as Jane Porter in The Legend of Tarzan (2016) and Harley Quinn in the DC superhero films Suicide Squad (2016), Birds of Prey (2020) and The Suicide Squad (2021).",
@@ -12,7 +18,6 @@
         "caption": "Margot Robbie Oxfam 2016"
     },
     "films": {
-        "title": "Notable films",
         "content": [
             {
                 "title": "The Suicide Squad",
@@ -217,7 +222,6 @@
         ]
     },
     "awards": {
-        "title": "Awards",
         "content": [
             {
                 "title": "AACTA International Awards",
@@ -342,16 +346,15 @@
         ]
     },
     "videos": {
-        "title": "Popular videos",
         "content": [
             "https://www.youtube.com/embed/Bl5630CeYFs",
             "https://www.youtube.com/embed/UYQ_Qh-NDLE",
             "https://www.youtube.com/embed/KjICBHj1EzM",
-            "https://www.youtube.com/embed/yKC7vOhr2vM"
+            "https://www.youtube.com/embed/yKC7vOhr2vM",
+            "https://www.youtube.com/embed/RDFBw4g_JZs"
         ]
     },
     "networks": {
-        "title": "Social networks",
         "content": [
             {
                 "icon": "fb",

@@ -22,8 +22,9 @@ function App() {
   useEffect(() => {
     const root = document.querySelector(":root");
     const section = document.querySelector(".content");
+    const categories = document.querySelector(".categories-content");
     const pagination = document.querySelector(".pagination");
-    const activeLanguage = document.querySelector(".active-language");
+    const activeLanguage = document.querySelector(".languages-content");
 
     const wheelMove = (event) => {
       if (!waiting) {
@@ -31,18 +32,24 @@ function App() {
         let height = Number(
           style.getPropertyValue("--position-y").split("vh")[0]
         );
+        let width = Number(
+          style.getPropertyValue("--position-x").split("%")[0]
+        );
         let pageHeight = Number(
           style.getPropertyValue("--page-position-y").split("px")[0]
         );
-        let position = height - event.deltaY;
+        let positionY = height - event.deltaY;
+        let positionX = width - event.deltaY;
         let page =
           pageHeight -
           Math.sign(event.deltaY) *
             (pagination.getBoundingClientRect().height / 5);
 
-        if (position >= -400 && position <= 0) {
+        if (positionY >= -400 && positionY <= 0) {
           root.style.setProperty("--current-position-y", height + "vh");
-          root.style.setProperty("--position-y", position + "vh");
+          root.style.setProperty("--position-y", positionY + "vh");
+          root.style.setProperty("--current-position-x", width + "%");
+          root.style.setProperty("--position-x", positionX + "%");
           root.style.setProperty(
             "--current-page-position-y",
             pageHeight + "px"
@@ -50,6 +57,7 @@ function App() {
           root.style.setProperty("--page-position-y", page + "px");
 
           section.classList.add("scroll");
+          categories.classList.add("scroll-category");
           pagination.classList.add("scroll-page");
           setWaiting(true);
         }
@@ -62,6 +70,7 @@ function App() {
       if (waiting) {
         setWaiting(false);
         section.classList.remove("scroll");
+        categories.classList.remove("scroll-category");
         pagination.classList.remove("scroll-page");
       } else if (waitingLanguage) {
         setWaitingLanguage(false);
@@ -76,7 +85,7 @@ function App() {
   }, [waiting, waitingLanguage, content]);
 
   const changeLanguage = () => {
-    const activeLanguage = document.querySelector(".active-language");
+    const activeLanguage = document.querySelector(".languages-content");
     const root = document.querySelector(":root");
 
     if (!waitingLanguage) {
@@ -164,7 +173,6 @@ function App() {
       {isMobile ? "" : <Cursor />}
 
       <header>
-        <div></div>
         <div className="title">
           <a href="/" className="link">
             <h1 onMouseEnter={cursorHover} onMouseLeave={cursorNotHover}>
@@ -179,13 +187,22 @@ function App() {
           onMouseEnter={cursorHover}
           onMouseLeave={cursorNotHover}
         >
-          <div className="item-language">
-            <div className="active-language">
+          <div className="language-mask">
+            <div className="languages-content">
               <span>en</span>
               <span>fr</span>
             </div>
           </div>
         </div>
+        <nav className="categories">
+          <div className="category-mask">
+            <div className="categories-content">
+              {content.categories.map((category, i) => (
+                <h2>{category}</h2>
+              ))}
+            </div>
+          </div>
+        </nav>
       </header>
 
       <main>
@@ -196,10 +213,7 @@ function App() {
         </div>
         <div className="content">
           <section className="section">
-            <div className="subtitle">
-              <h2>{content.biography.title}</h2>
-            </div>
-            <div className="section-content">
+            <div className="section-content-flex">
               <aside>
                 <figure>
                   <div className="portrait" alt={content.biography.caption} />
@@ -226,9 +240,6 @@ function App() {
             </div>
           </section>
           <section className="section">
-            <div className="subtitle">
-              <h2>{content.films.title}</h2>
-            </div>
             <div className="section-content">
               <div
                 className="cards-content film"
@@ -252,9 +263,6 @@ function App() {
             </div>
           </section>
           <section className="section">
-            <div className="subtitle">
-              <h2>{content.awards.title}</h2>
-            </div>
             <div className="section-content">
               <div
                 className="cards-content award"
@@ -278,9 +286,6 @@ function App() {
             </div>
           </section>
           <section className="section">
-            <div className="subtitle">
-              <h2>{content.videos.title}</h2>
-            </div>
             <div className="section-content">
               <div
                 className="cards-content video"
@@ -301,8 +306,7 @@ function App() {
             </div>
           </section>
           <section className="section">
-            <h2>{content.networks.title}</h2>
-            <div className="section-content">
+            <div className="section-content-flex">
               <div className="networks-content">
                 {content.networks.content.map((content, i) => (
                   <Network

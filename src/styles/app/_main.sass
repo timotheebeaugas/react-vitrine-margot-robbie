@@ -10,31 +10,20 @@ main
     height: calc(100vh - 70px - 35px)
     width: 100vw
     padding: 70px 0px 35px 0px
+    position: relative
 
 .section-content
-    height: 100%
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+
+.section-content-flex
     width: 100%
+    height: 100%
     display: flex
     flex-wrap: wrap
     align-content: center
     justify-content: center
-
-.subtitle
-    width: 100%
-
-h2
-    color: first-color
-    margin: $margin
-    display: flex
-    align-items: center
-    &:after
-        flex: 1
-        transform: translateY(-5%)
-        right: 0px
-        content: ""
-        background-color: $first-color
-        height: 1px
-        margin: 0px $margin
 
 aside
     width: 300px
@@ -99,8 +88,8 @@ a
     display: flex
     flex-wrap: wrap
     align-content: center
+    justify-content: center
     margin: $margin
-
 
 .link
     position: relative

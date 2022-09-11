@@ -1,7 +1,7 @@
 import { ReactComponent as Play } from "../assets/icons/play.svg";
 
 export const Film = ({ props }) => {
-  const { content, cursorHover, cursorNotHover } = props;
+  const { content, cursorHover, cursorNotHover, isMobile } = props;
 
   return (
     <article className="card-film">
@@ -10,8 +10,10 @@ export const Film = ({ props }) => {
           href={content.trailer}
           target="_blank"
           rel="noopener noreferrer"
-          onMouseEnter={cursorHover}
-          onMouseLeave={cursorNotHover}
+          {...(!isMobile && {
+            onMouseEnter: cursorHover,
+            onMouseLeave: cursorNotHover,
+          })}
         >
           <img
             src={require("../assets/images/" + content.poster)}

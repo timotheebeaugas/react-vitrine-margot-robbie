@@ -3,15 +3,13 @@ export const Video = (content) => {
 
   return (
     <div className="card-video">
-        <iframe
-        width="533"
-        height="300"
+      <iframe
         src={src}
         title="YouTube video player"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
-        ></iframe>
+      ></iframe>
     </div>
   );
 };

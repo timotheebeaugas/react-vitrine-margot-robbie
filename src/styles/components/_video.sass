@@ -1,6 +1,4 @@
 .card-video
-  height: 350px
-  width: 560px
   margin: 0px 10px 
   display: flex
   align-items: center
@@ -9,3 +7,16 @@
   padding: 5px
   &:nth-child(2n)
     background-color: rgba($second-color, 0.25)
+  @media screen and (min-width: $medium)
+    width: 560px
+    height: 350px
+  @media screen and (max-width: $medium)
+    width: 400px
+    height: 250px
+  iframe
+    @media screen and (min-width: $medium)
+      width: 533px
+      height: 300px
+    @media screen and (max-width: $medium)
+      width: 380px
+      height: 214px

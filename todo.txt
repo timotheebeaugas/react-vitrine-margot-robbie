@@ -2,5 +2,3 @@ two langs
 firefox + safari
 favicon
 font + color
-
-touch even !

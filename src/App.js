@@ -39,9 +39,9 @@ function App() {
         let pageHeight = Number(
           style.getPropertyValue("--page-position-y").split("px")[0]
         );
-        let positionY = height - (Math.sign(event.deltaY)*100);
-        let positionX = width - (Math.sign(event.deltaY)*100);
-        
+        let positionY = height - Math.sign(event.deltaY) * 100;
+        let positionX = width - Math.sign(event.deltaY) * 100;
+
         let page =
           pageHeight -
           Math.sign(event.deltaY) *
@@ -157,21 +157,58 @@ function App() {
       }
     };
 
-    document.addEventListener("mousemove", mousePosition);
+    const touchPosition = (event) => {
+      
+      if (swipe) {
+        const element = document.querySelector("." + swipe.class);
+        let position =
+          event.changedTouches[0].clientX -
+          swipe.event.clientX +
+          swipe.rect.left;
+
+        if (
+          position < 0 &&
+          position > window.innerWidth - element.scrollWidth
+        ) {
+          element.style.transform = "translateX(" + position + "px)";
+        }
+      }
+    };
+
+    if (isMobile) {
+      document.addEventListener("touchmove", touchPosition);
+    } else {
+      document.addEventListener("mousemove", mousePosition);
+    }
 
     return () => {
-      document.removeEventListener("mousemove", mousePosition);
+      if (isMobile) {
+        document.removeEventListener("touchmove", touchPosition);
+      } else {
+        document.removeEventListener("mousemove", mousePosition);
+      }
     };
-  }, [swipe]);
+  }, [swipe, isMobile]);
 
   return (
-    <div className="App" onMouseDown={activeCursor} onMouseUp={unactiveCursor}>
-      {isMobile ? "" : <Cursor />}
+    <div
+      className="App"
+      {...(!isMobile && {
+        onMouseDown: activeCursor,
+        onMouseUp: unactiveCursor,
+      })}
+    >
+      {isMobile ? null : <Cursor />}
 
       <header>
         <div className="title">
           <a href="/" className="link">
-            <h1 onMouseEnter={cursorHover} onMouseLeave={cursorNotHover}>
+            <h1
+              {...(!isMobile && {
+                onMouseEnter: cursorHover,
+                onMouseLeave: cursorNotHover,
+              })}
+            >
               {" "}
               {content.title}{" "}
             </h1>
@@ -180,8 +217,10 @@ function App() {
         <div
           className="languages"
           onClick={changeLanguage}
-          onMouseEnter={cursorHover}
-          onMouseLeave={cursorNotHover}
+          {...(!isMobile && {
+            onMouseEnter: cursorHover,
+            onMouseLeave: cursorNotHover,
+          })}
         >
           <div className="language-mask">
             <div className="languages-content">
@@ -225,8 +264,10 @@ function App() {
                     href={content.biography.source}
                     target="_blank"
                     rel="noopener noreferrer"
-                    onMouseEnter={cursorHover}
-                    onMouseLeave={cursorNotHover}
+                    {...(!isMobile && {
+                      onMouseEnter: cursorHover,
+                      onMouseLeave: cursorNotHover,
+                    })}
                     className="link"
                   >
                     Wikipedia
@@ -239,19 +280,31 @@ function App() {
             <div className="section-content">
               <div
                 className="cards-content film"
-                onMouseDown={(event) =>
-                  setSwipe({
-                    class: "film",
-                    event: event,
-                    rect: document
-                      .querySelector(".film")
-                      .getBoundingClientRect(),
-                  })
-                }
+                {...(!isMobile
+                  ? {
+                      onMouseDown: (event) =>
+                        setSwipe({
+                          class: "film",
+                          event: event,
+                          rect: document
+                            .querySelector(".film")
+                            .getBoundingClientRect(),
+                        }),
+                    }
+                  : {
+                      onPointerDown: (event) =>
+                        setSwipe({
+                          class: "film",
+                          event: event,
+                          rect: document
+                            .querySelector(".film")
+                            .getBoundingClientRect(),
+                        }),
+                    })}
               >
                 {content.films.content.map((content, i) => (
                   <Film
-                    props={{ content, cursorHover, cursorNotHover }}
+                    props={{ content, cursorHover, cursorNotHover, isMobile }}
                     key={i}
                   />
                 ))}
@@ -262,21 +315,30 @@ function App() {
             <div className="section-content">
               <div
                 className="cards-content award"
-                onMouseDown={(event) =>
-                  setSwipe({
-                    class: "award",
-                    event: event,
-                    rect: document
-                      .querySelector(".award")
-                      .getBoundingClientRect(),
-                  })
-                }
+                {...(!isMobile
+                  ? {
+                      onMouseDown: (event) =>
+                        setSwipe({
+                          class: "award",
+                          event: event,
+                          rect: document
+                            .querySelector(".award")
+                            .getBoundingClientRect(),
+                        }),
+                    }
+                  : {
+                      onPointerDown: (event) =>
+                        setSwipe({
+                          class: "award",
+                          event: event,
+                          rect: document
+                            .querySelector(".award")
+                            .getBoundingClientRect(),
+                        }),
+                    })}
               >
                 {content.awards.content.map((content, i) => (
-                  <Award
-                    props={{ content }}
-                    key={i}
-                  />
+                  <Award props={{ content }} key={i} />
                 ))}
               </div>
             </div>
@@ -285,15 +347,26 @@ function App() {
             <div className="section-content">
               <div
                 className="cards-content video"
-                onMouseDown={(event) =>
-                  setSwipe({
-                    class: "video",
-                    event: event,
-                    rect: document
-                      .querySelector(".video")
-                      .getBoundingClientRect(),
-                  })
-                }
+                {...(!isMobile ? {
+                  onMouseDown: (event) =>
+                    setSwipe({
+                      class: "video",
+                      event: event,
+                      rect: document
+                        .querySelector(".video")
+                        .getBoundingClientRect(),
+                    })}
+                  :
+                  {
+                    onPointerDown: (event) =>
+                      setSwipe({
+                        class: "video",
+                        event: event,
+                        rect: document
+                          .querySelector(".video")
+                          .getBoundingClientRect(),
+                      })}
+                )}
               >
                 {content.videos.content.map((content, i) => (
                   <Video props={content} key={i} />
@@ -306,7 +379,7 @@ function App() {
               <div className="networks-content">
                 {content.networks.content.map((content, i) => (
                   <Network
-                    props={{ content, cursorHover, cursorNotHover }}
+                    props={{ content, cursorHover, cursorNotHover, isMobile }}
                     key={i}
                   />
                 ))}

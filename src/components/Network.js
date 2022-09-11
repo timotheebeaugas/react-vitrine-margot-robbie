@@ -5,7 +5,7 @@ import { ReactComponent as IMDB } from "../assets/icons/imdb.svg";
 import { ReactComponent as MSG } from "../assets/icons/msg.svg";
 
 export const Network = ({ props }) => {
-  const { content, cursorHover, cursorNotHover } = props;
+  const { content, cursorHover, cursorNotHover, isMobile } = props;
 
   return (
     <article className="network">
@@ -13,8 +13,10 @@ export const Network = ({ props }) => {
         href={content.link}
         target="_blank"
         rel="noopener noreferrer"
-        onMouseEnter={cursorHover}
-        onMouseLeave={cursorNotHover}
+        {...(!isMobile && {
+          onMouseEnter: cursorHover,
+          onMouseLeave: cursorNotHover,
+        })}
       >
         <div className="network-content">
           <div className="network-logo">
@@ -22,8 +24,8 @@ export const Network = ({ props }) => {
               {
                 fb: <FB />,
                 ig: <IG />,
-                vk: <VK/>,
-                imdb: <IMDB />, 
+                vk: <VK />,
+                imdb: <IMDB />,
                 msg: <MSG />,
               }[content.icon]
             }

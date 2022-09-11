@@ -1,3 +1,6 @@
-Pages: welcome, biography, films, networks // chronological
-cursor, pagination, remove scrollbar, two lang, increment social network followers, effet roulette verticale page + lang, Safari?
-see others website about her
+two langs
+firefox + safari
+favicon
+font + color
+
+touch even !

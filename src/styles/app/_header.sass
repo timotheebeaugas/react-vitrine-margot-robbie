@@ -67,8 +67,11 @@ h1
 .category-mask
   overflow: hidden
   position: relative
-  width: 50%
   height: 100%
+  @media screen and (min-width: $small)
+    width: 50%
+  @media screen and (max-width: $small)
+    width: 75%
 
 .categories-content
   transform: translateX(var(--position-x))

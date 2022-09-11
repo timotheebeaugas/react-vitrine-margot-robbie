@@ -1,0 +1,52 @@
+.card-film
+  height: 350px
+  width: 250px
+  margin: 0px $margin
+  border: $border
+  padding: 5px
+  display: grid
+  grid-template-rows: 260px 65px 25px
+  grid-gap: 0px
+  &:nth-child(2n)
+    background-color: rgba($second-color, 0.25)
+
+.card-film-image
+  grid-row: 1
+  position: relative
+  img
+    height: 260px
+    max-width: 250px
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+  svg
+    height: 48px
+    max-width: 48px
+    fill: $background-color
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    opacity: 0
+    transition: opacity 300ms
+  &:hover svg
+    opacity: 1
+    
+
+
+.card-film-title
+  grid-row: 2
+  h3
+    margin: 10px 0px 0px 0px
+    font-weight: normal
+    font-style: italic
+    font-size: 22px
+
+.card-film-date
+  grid-row: 3
+  font-weight: bold
+  font-size: 22px
+  color: $second-color
+
+

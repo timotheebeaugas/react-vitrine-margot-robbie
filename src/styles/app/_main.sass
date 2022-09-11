@@ -26,12 +26,15 @@ main
     justify-content: center
 
 aside
-    width: 300px
     margin: 0px 50px
     @media screen and (min-width: $medium)
         order: 1
-    @media screen and (max-width: $medium)
+        width: 300px
+    @media screen and (min-width: $small) and (max-width: $medium)
         order: 0
+        width: 200px
+    @media screen and (max-width: $small)
+        display: none
     p
         text-align: center
         color: $second-color
@@ -41,8 +44,6 @@ figure
 
 .portrait
     position: relative
-    height: 300px
-    width: 300px
     border-radius: 50%
     background-image: url("../.././assets/images/margot-robbie.png")
     background-size: 100%
@@ -58,13 +59,21 @@ figure
         border-radius: 50%
         background-color: rgba($second-color, 0.25)
         border: $border
+    @media screen and (min-width: $medium)
+        height: 300px
+        width: 300px
+    @media screen and (min-width: $small) and (max-width: $medium)
+        height: 200px
+        width: 200px
 
 .biography-content
     max-width: 1000px
     @media screen and (min-width: $medium)
         margin: 0px 50px
-    @media screen and (max-width: $medium)
-        margin: 0px
+    @media screen and (min-width: $small) and (max-width: $medium)
+        margin: 0px 10px
+    @media screen and (max-width: $small)
+        margin: 0px 5px
 
 .scroll
     animation: scroll 1s ease forwards

@@ -1,46 +1,43 @@
-.card
+.card-award
   height: 350px
   width: 250px
   margin: 0px $margin
   border: $border
   padding: 5px
   display: grid
-  grid-template-rows: 100px 70px 38px 122px 20px
+  grid-template-rows: 100px 70px 38px 142px
   grid-gap: 0px
   &:nth-child(2n)
     background-color: rgba($second-color, 0.25)
 
-.card-date
+.card-award-date
   grid-row: 1
   font-weight: bold
   font-size: 100px
   color: $first-color
   opacity: .25
 
-.card-title
+.card-award-title
   grid-row: 2
   h3
     font-weight: bold
     font-size: 24px
     margin: $margin 0px
 
-.card-category
+.card-award-category
   grid-row: 3
+  transform: translateX(-10px)
+  clip-path: polygon(0% 0%, 100% 0, 90% 50%, 100% 100%, 0% 100%)
   background-color: $first-color
   color: $background-color
   line-height: 16px
+  padding: 0px 0px 0px 10px
   display: flex
   align-items: center
-  padding: 0px 0px 0px 10px
 
-.card-description
+.card-award-film
   grid-row: 4
   padding: $margin 0px
-  overflow: hidden
-
-.card-trailer
-  grid-row: 5
-  display: flex
-  align-items: center
-  justify-content: center
+  font-style: italic
+  font-size: 22px
 

@@ -1,6 +1,7 @@
 import { ReactComponent as FB } from "../assets/icons/fb.svg";
 import { ReactComponent as IG } from "../assets/icons/ig.svg";
 import { ReactComponent as VK } from "../assets/icons/vk.svg";
+import { ReactComponent as IMDB } from "../assets/icons/imdb.svg";
 import { ReactComponent as MSG } from "../assets/icons/msg.svg";
 
 export const Network = ({ props }) => {
@@ -21,7 +22,8 @@ export const Network = ({ props }) => {
               {
                 fb: <FB />,
                 ig: <IG />,
-                vk: <VK />,
+                vk: <VK/>,
+                imdb: <IMDB />, 
                 msg: <MSG />,
               }[content.icon]
             }

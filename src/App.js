@@ -4,7 +4,8 @@ import { Cursor } from "./components/Cursor";
 import { ResizeDevice } from "./utils/devices";
 import { Background } from "./components/Background";
 import { useIsMobile } from "./utils/hooks/isMobile.js";
-import { Card } from "./components/Card.js";
+import { Award } from "./components/Award.js";
+import { Film } from "./components/Film.js";
 import { Network } from "./components/Network.js";
 import { Video } from "./components/Video.js";
 import { Biography } from "./components/Biography.js";
@@ -38,8 +39,9 @@ function App() {
         let pageHeight = Number(
           style.getPropertyValue("--page-position-y").split("px")[0]
         );
-        let positionY = height - event.deltaY;
-        let positionX = width - event.deltaY;
+        let positionY = height - (Math.sign(event.deltaY)*100);
+        let positionX = width - (Math.sign(event.deltaY)*100);
+        
         let page =
           pageHeight -
           Math.sign(event.deltaY) *
@@ -145,13 +147,7 @@ function App() {
       if (swipe) {
         const element = document.querySelector("." + swipe.class);
         let position = event.clientX - swipe.event.clientX + swipe.rect.left;
-        console.log(
-          event.clientX,
-          swipe.event.clientX,
-          swipe.rect.left,
-          window.innerWidth,
-          element.scrollWidth
-        );
+
         if (
           position < 0 &&
           position > window.innerWidth - element.scrollWidth
@@ -198,7 +194,7 @@ function App() {
           <div className="category-mask">
             <div className="categories-content">
               {content.categories.map((category, i) => (
-                <h2>{category}</h2>
+                <h2 key={i}>{category}</h2>
               ))}
             </div>
           </div>
@@ -254,7 +250,7 @@ function App() {
                 }
               >
                 {content.films.content.map((content, i) => (
-                  <Card
+                  <Film
                     props={{ content, cursorHover, cursorNotHover }}
                     key={i}
                   />
@@ -277,8 +273,8 @@ function App() {
                 }
               >
                 {content.awards.content.map((content, i) => (
-                  <Card
-                    props={{ content, cursorHover, cursorNotHover }}
+                  <Award
+                    props={{ content }}
                     key={i}
                   />
                 ))}

@@ -12,7 +12,6 @@ import { Biography } from "./components/Biography.js";
 import { Category } from "./components/Category.js";
 
 function App() {
-  //const [language, setLanguage] = useState("en");
   const [content, currentLanguage, setCurrentLanguage] = useI18n("en");
   const [waiting, setWaiting] = useState(false);
   const [waitingLanguage, setWaitingLanguage] = useState(false);
@@ -255,7 +254,7 @@ function App() {
                   <div className="portrait" alt={content.biography.caption} />
                 </figure>
                 <p>{content.biography.caption}</p>
-              </aside>
+              </aside>    
               <div className="biography-content">
                 {content.biography.paragraphs.map((content, i) => (
                   <Biography props={content} key={i} />

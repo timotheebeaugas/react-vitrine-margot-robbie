@@ -2,7 +2,7 @@
     "title": "Margot Robbie",
     "categories": [
         "Biography",
-        "Notable films",
+        "Films",
         "Awards",
         "Popular videos",
         "Social networks"
@@ -19,6 +19,12 @@
     },
     "films": {
         "content": [
+            {
+                "title": "Amsterdam",
+                "poster": "Amsterdam.jpg",
+                "date": "2022",
+                "trailer": "https://www.youtube.com/watch?v=GLs2xxM0e78"
+            },
             {
                 "title": "The Suicide Squad",
                 "poster": "The_Suicide_Squad.jpg",

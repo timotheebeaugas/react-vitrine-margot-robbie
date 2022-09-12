@@ -9,6 +9,7 @@ import { Film } from "./components/Film.js";
 import { Network } from "./components/Network.js";
 import { Video } from "./components/Video.js";
 import { Biography } from "./components/Biography.js";
+import { Category } from "./components/Category.js";
 
 function App() {
   //const [language, setLanguage] = useState("en");
@@ -232,8 +233,8 @@ function App() {
         <nav className="categories">
           <div className="category-mask">
             <div className="categories-content">
-              {content.categories.map((category, i) => (
-                <h2 key={i}>{category}</h2>
+              {content.categories.map((content, i) => (
+                <Category props={content} key={i} />
               ))}
             </div>
           </div>

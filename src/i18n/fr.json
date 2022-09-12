@@ -1,24 +1,31 @@
 {
     "title": "Margot Robbie",
     "categories": [
-        "Biography",
-        "Notable films",
+        "Biographie",
+        "Films",
         "Awards",
-        "Popular videos",
-        "Social networks"
+        "Récompenses",
+        "Réseaux sociaux"
     ],
     "biography": {
         "paragraphs": [
-            "Margot Elise Robbie (born 2 July 1990) is an Australian actress and producer. Known for her roles in both blockbusters and independent films, she has received several accolades, including nominations for two Academy Awards, three Golden Globe Awards, and five British Academy Film Awards. Time magazine named her one of the 100 most influential people in the world in 2017 and she was ranked as one of the world's highest-paid actresses by Forbes in 2019.",
-            "Born and raised in Queensland, Robbie began her career on the television series Neighbours (2008–2011, 2022) and Pan Am (2011–2012). Her breakthrough came in 2013 with the black comedy film The Wolf of Wall Street. She achieved wider recognition with starring roles as Jane Porter in The Legend of Tarzan (2016) and Harley Quinn in the DC superhero films Suicide Squad (2016), Birds of Prey (2020) and The Suicide Squad (2021).",
-            "Robbie received critical acclaim and a nomination for the Academy Award for Best Actress for her portrayal of disgraced figure skater Tonya Harding in the biopic I, Tonya (2017). This acclaim continued with her roles as Queen Elizabeth I in the period drama Mary Queen of Scots (2018), Sharon Tate in the comedy-drama Once Upon a Time in Hollywood (2019), and a fictional Fox News employee in the drama Bombshell (2019); she received BAFTA Award nominations for all three and a nomination for the Academy Award for Best Supporting Actress for the lattermost.",
-            "Robbie is married to filmmaker Tom Ackerley. They are co-founders of the production company LuckyChap Entertainment, under which they have produced several films, including Promising Young Woman (2020), as well as the television series Dollface (2019–2022) and the miniseries Maid (2021)."
+            "Margot Robbie, née le 2 juillet 1990 à Dalby, Queensland, en Australie est une actrice et productrice australienne.",
+            "Robbie se fait connaitre en Australie en 2008 en décrochant un rôle régulier dans le soap opera à succès Les Voisins, rôle qu'elle tiendra quatre ans et qui lui permettra de décrocher deux nominations aux Logie Awards. Elle se lance ensuite à Hollywood en devenant l'un des personnages centraux de la série télévisée Pan Am, annulée après son unique saison. Néanmoins, elle accède à la renommée internationale deux ans plus tard, à l'âge de 23 ans, grâce au film à succès de Martin Scorsese, Le Loup de Wall Street2 dans lequel elle tient un second rôle.",
+            "Par la suite, elle obtient des rôles dans des films à plus gros budgets comme Diversion où elle donne la réplique à Will Smith ou Tarzan de David Yates. En 2016, elle rejoint l'univers cinématographique DC et devient l'interprète du célèbre personnage de comics Harley Quinn, l’assistante et petite amie du Joker, rôle qu'elle interprète pour la première fois dans le film Suicide Squad en 2016.",
+            "En 2014, elle lance avec plusieurs collaborateurs LuckyChap Entertainment, son entreprise de production avec laquelle elle produit notamment le film Moi, Tonya, réalisé par l'Australien Craig Gillespie, qui lui permet d'être nommée en 2018, à l'âge de 27 ans, aux Golden Globes, aux BAFA et aux Oscars.",
+            "Par la suite, elle est acclamée pour ses rôles dans Marie Stuart, Reine d'Écosse, dans Once Upon a Time... in Hollywood de Quentin Tarantino ou encore dans le drame Scandale, qui lui permettent d'être nommée une nouvelle fois aux BAFA ainsi qu'aux Oscars pour le dernier."
         ],
-        "source": "https://en.wikipedia.org/wiki/Margot_Robbie",
+        "source": "https://fr.wikipedia.org/wiki/Margot_Robbie",
         "caption": "Margot Robbie Oxfam 2016"
     },
     "films": {
         "content": [
+            {
+                "title": "Amsterdam",
+                "poster": "Amsterdam.jpg",
+                "date": "2022",
+                "trailer": "https://www.youtube.com/watch?v=GLs2xxM0e78"
+            },
             {
                 "title": "The Suicide Squad",
                 "poster": "The_Suicide_Squad.jpg",
@@ -26,7 +33,7 @@
                 "trailer": "https://www.youtube.com/watch?v=JuDLepNa7hw"
             },
             {
-                "title": "Peter Rabbit 2: The Runaway",
+                "title": "Pierre Lapin 2 : Panique en ville",
                 "poster": "Peter_Rabbit_2.png",
                 "date": "2021",
                 "trailer": "https://www.youtube.com/watch?v=euGHcnyUo84"
@@ -44,7 +51,7 @@
                 "trailer": "https://www.youtube.com/watch?v=kGM4uYZzfu0"
             },
             {
-                "title": "Bombshell",
+                "title": "Scandale",
                 "poster": "Bombshell.jpg",
                 "date": "2019",
                 "trailer": "https://www.youtube.com/watch?v=0rBnkBIhoFE"
@@ -62,13 +69,13 @@
                 "trailer": "https://www.youtube.com/watch?v=agn4t4SOB_0"
             },
             {
-                "title": "Mary Queen of Scots",
+                "title": "Marie Stuart, reine d'Écosse",
                 "poster": "Mary_Queen_of_Scots.png",
                 "date": "2018",
                 "trailer": "https://www.youtube.com/watch?v=T5l8cvuo7IA"
             },
             {
-                "title": "Slaughterhouse Rulez",
+                "title": "Massacre au pensionnat",
                 "poster": "Slaughterhouse_Rulez.png",
                 "date": "2018",
                 "trailer": "https://www.youtube.com/watch?v=xVzhqPC-CCM"
@@ -86,7 +93,7 @@
                 "trailer": "https://www.youtube.com/watch?v=x1nwmL9-b8Q"
             },
             {
-                "title": "Peter Rabbit",
+                "title": "Pierre Lapin",
                 "poster": "Peter_Rabbit.jpg",
                 "date": "2018",
                 "trailer": "https://www.youtube.com/watch?v=7Pa_Weidt08"
@@ -98,7 +105,7 @@
                 "trailer": "https://www.youtube.com/watch?v=uQq3aFSijRg"
             },
             {
-                "title": "I, Tonya",
+                "title": "Moi, Tonya",
                 "poster": "I_Tonya.png",
                 "date": "2017",
                 "trailer": "https://www.youtube.com/watch?v=OXZQ5DfSAAc"
@@ -110,7 +117,7 @@
                 "trailer": "https://www.youtube.com/watch?v=CmRih_VtVAs"
             },
             {
-                "title": "The Legend of Tarzan",
+                "title": "Tarzan",
                 "poster": "The_Legend_of_Tarzan.jpg",
                 "date": "2016",
                 "trailer": "https://www.youtube.com/watch?v=3pwUsilvTUA"
@@ -128,31 +135,31 @@
                 "trailer": "https://www.youtube.com/watch?v=B-9B1gfvqLE"
             },
             {
-                "title": "Focus",
+                "title": "Diversion",
                 "poster": "Focus.png",
                 "date": "2015",
                 "trailer": "https://www.youtube.com/watch?v=MxCRgtdAuBo"
             },
             {
-                "title": "The Big Short",
+                "title": "The Big Short : le Casse du siècle",
                 "poster": "The_Big_Short.png",
                 "date": "2021",
                 "trailer": "https://www.youtube.com/watch?v=vgqG3ITMv1Q"
             },
             {
-                "title": "Z for Zachariah",
+                "title": "Les Survivants",
                 "poster": "Z_for_Zachariah.jpg",
                 "date": "2015",
                 "trailer": "https://www.youtube.com/watch?v=bxw4KFxPcoY"
             },
             {
-                "title": "The Wolf of Wall Street",
+                "title": "Le loup de Wall Street",
                 "poster": "The_Wolf_of_Wall_Street.png",
                 "date": "2013",
                 "trailer": "https://www.youtube.com/watch?v=iszwuX1AK6A"
             },
             {
-                "title": "About Time",
+                "title": "Il était temps",
                 "poster": "About_Time.jpg",
                 "date": "2013",
                 "trailer": "https://www.youtube.com/watch?v=T7A810duHvw"
@@ -176,91 +183,91 @@
         "content": [
             {
                 "title": "AACTA International Awards",
-                "category": "Best Film",
+                "category": "Meilleure actrice",
                 "date": "2021",
                 "film": "Promising Young Woman"
             },
             {
                 "title": "Sant Jordi Awards",
-                "category": "Best Actress in a Foreign Film",
+                "category": "Meilleure actrice dans un film étranger",
                 "date": "2020",
                 "film": "Once Upon a Time in Hollywood"
             },
             {
                 "title": "AACTA International Awards",
-                "category": "Best Supporting Actress",
+                "category": "Meilleure actrice dans un second rôle",
                 "date": "2020",
                 "film": "Bombshell"
             },
             {
                 "title": "San Diego Film Critics Society",
-                "category": "Best Actress",
+                "category": "Meilleure actrice",
                 "date": "2017",
                 "film": "I, Tonya"
             },
             {
                 "title": "Critics' Choice Movie Awards",
-                "category": "Best Actress",
+                "category": "Meilleure actrice",
                 "date": "2018",
                 "film": "I, Tonya"
             },
             {
                 "title": "Alliance of Women Film Journalists",
-                "category": "Bravest Performance",
+                "category": "Performances les plus courageuses",
                 "date": "2018",
                 "film": "I, Tonya"
             },
             {
                 "title": "AACTA International Awards",
-                "category": "Best Actress",
+                "category": "Meilleure actrice",
                 "date": "2018",
                 "film": "I, Tonya"
             },
             {
                 "title": "San Francisco Bay Area Film Critics Circle",
-                "category": "Best Actress",
+                "category": "Meilleure actrice",
                 "date": "2017",
                 "film": "I, Tonya"
             },
             {
                 "title": "People's Choise Awards",
-                "category": "Favorite Action Movie Actress",
+                "category": "Meilleure actrice dans un film d'action",
                 "date": "2017",
                 "film": "Suicide Squad"
             },
             {
                 "title": "New York Film Critics Online",
-                "category": "Best Actress",
+                "category": "Meilleure actrice",
                 "date": "2017",
                 "film": "I, Tonya"
             },
             {
                 "title": "Hollywood Film Awards",
-                "category": "Hollywood Ensemble Award",
+                "category": "Prix ​​​​de l'ensemble hollywoodien",
                 "date": "2017",
                 "film": "I, Tonya"
             },
             {
                 "title": "Florida Film Critics Circle",
-                "category": "Best Actress",
+                "category": "Meilleure actrice",
                 "date": "2017",
                 "film": "I, Tonya"
             },
             {
                 "title": "Critics' Choice Movie Awards",
-                "category": "Best actress",
+                "category": "Meilleure actrice",
                 "date": "2017",
                 "film": "Suicide Squad"
             },
             {
                 "title": "Teen Choice Awards",
-                "category": "Choice Movie Actress",
+                "category": "Actrice de cinéma de choix",
                 "date": "2016",
                 "film": "Suicide Squad"
             },
             {
                 "title": "Empire Awards",
-                "category": "Best Female Newcomer",
+                "category": "Meilleure nouvelle venue féminine",
                 "date": "2014",
                 "film": "The Wolf of Wall Street"
             }

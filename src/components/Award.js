@@ -1,4 +1,4 @@
-export const Award = ({props}) => {
+export const Award = ({ props }) => {
   const { content } = props;
 
   return (
@@ -7,7 +7,9 @@ export const Award = ({props}) => {
       <div className="card-award-title">
         <h3>{content.title}</h3>
       </div>
-      <div className="card-award-category">{content.category}</div>
+      <div className="card-award-category">
+        <span>{content.category}</span>
+      </div>
       <div className="card-award-film">{content.film}</div>
     </article>
   );

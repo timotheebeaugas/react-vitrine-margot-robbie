@@ -3,10 +3,13 @@
   display: flex
   align-items: center
   justify-content: center
-  border: solid 3px rgba($third-color, 0.25)
+  background-color: $card-background
+  border-radius: $card-border-radius
   padding: 5px
   &:nth-child(2n)
-    background-color: rgba($second-color, 0.25)
+    border-top: $card-border-dark
+  &:nth-child(2n+1)
+    border-top: $card-border-light
   @media screen and (min-width: $medium)
     width: 560px
     height: 350px

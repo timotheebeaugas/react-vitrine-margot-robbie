@@ -28,12 +28,17 @@ main
 aside
     margin: 0px 50px
     font-family: 'Ovo'
-    @media screen and (min-width: $medium)
+    @media screen and (min-width: $extra-large)
         order: 1
         width: 300px
+    @media screen and (max-height: $medium)
+        display: none        
+    @media screen and (min-width: $large) and (max-width: $extra-large)
+        display: none
+    @media screen and (min-width: $medium) and (max-width: $large)
+        display: none
     @media screen and (min-width: $small) and (max-width: $medium)
-        order: 0
-        width: 200px
+        display: none
     @media screen and (max-width: $small)
         display: none
     p
@@ -59,24 +64,33 @@ figure
         width: 95%
         border-radius: 50%
         background-color: rgba($third-color, 0.25)
-        border: $border
-    @media screen and (min-width: $medium)
+        border: $picture-border
+    @media screen and (min-width: $extra-large)
         height: 300px
         width: 300px
-    @media screen and (max-width: $medium)
-        height: 200px
-        width: 200px
+    @media screen and (min-width: $large) and (max-width: $extra-large)
+        display: none
+    @media screen and (min-width: $medium) and (max-width: $large)
+        display: none
+    @media screen and (min-width: $small) and (max-width: $medium)
+        display: none
+    @media screen and (max-width: $small)
+        display: none
 
 .biography-content
     max-width: 1000px
     font-family: 'Ovo'
     color: $third-color
-    @media screen and (min-width: $medium)
+    @media screen and (min-width: $large)
         margin: 0px 50px
+    @media screen and (min-width: $medium) and (max-width: $large)
+        margin: 0px 20px
     @media screen and (min-width: $small) and (max-width: $medium)
         margin: 0px 10px
+        font-size: 14px
     @media screen and (max-width: $small)
         margin: 0px 5px
+        font-size: 12px
 
 .scroll
     animation: scroll 1s ease forwards
@@ -113,7 +127,7 @@ a
         width: 0px
         left: 50%
         position: absolute
-        background: $first-color
+        background: $third-color
         transition: width 0.3s ease 0s, left 0.3s ease 0s
     &:hover:after
         width: 100%

@@ -1,4 +1,3 @@
 firefox + safari
 favicon
-font + color
 netlify

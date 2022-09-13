@@ -2,7 +2,8 @@
   height: 350px
   width: 250px
   margin: 0px $margin
-  border: $border
+  background-color: $card-background
+  border-radius: $card-border-radius
   padding: 5px
   display: grid
   grid-template-rows: 260px 65px 25px
@@ -10,14 +11,16 @@
   font-family: 'Ovo'
   color: $third-color
   &:nth-child(2n)
-    background-color: rgba($second-color, 0.25)
+    border-top: $card-border-dark
+  &:nth-child(2n+1)
+    border-top: $card-border-light
 
 .card-film-image
   grid-row: 1
   position: relative
   img
     height: 260px
-    max-width: 250px
+    max-width: 250px 
     position: absolute
     top: 50%
     left: 50%

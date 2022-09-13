@@ -2,7 +2,8 @@
   height: 350px
   width: 250px
   margin: 0px $margin
-  border: $border
+  background-color: $card-background
+  border-radius: $card-border-radius
   padding: 5px
   display: grid
   grid-template-rows: 100px 70px 38px 142px
@@ -10,7 +11,9 @@
   font-family: 'Ovo'
   color: $third-color
   &:nth-child(2n)
-    background-color: rgba($second-color, 0.25)
+    border-top: $card-border-dark
+  &:nth-child(2n+1)
+    border-top: $card-border-light
 
 .card-award-date
   grid-row: 1
@@ -18,7 +21,7 @@
   font-size: 100px
   color: $third-color
   opacity: .25
-
+ 
 .card-award-title
   grid-row: 2
   h3

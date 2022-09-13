@@ -1,34 +1,57 @@
 .network
-    width: 200px
-    height: 50px
     margin: $margin
     font-family: 'Ovo'
+    @media screen and (min-width: $small)
+        width: 200px
+        height: 50px
+    @media screen and (max-width: $small)
+        width: 200px
+        height: 50px
 
 .network-content
     display: grid
-    grid-template-rows: 25px 25px
-    grid-auto-columns: 50px 150px
-    grid-gap: 5px
     &:hover svg
         transform: scale(1.1)
+    @media screen and (min-width: $small)
+        grid-template-rows: 25px 25px
+        grid-auto-columns: 50px 150px
+        grid-gap: 5px
+    @media screen and (max-width: $small)
+        grid-template-rows: 25px 25px
+        grid-auto-columns: 50px 150px
 
 .network-title
     grid-column: 2
     grid-row: 1
+    display: flex
+    align-items: center
     h3
         margin: 0px
+        @media screen and (min-width: $small)
+            font-size: 18px
+        @media screen and (max-width: $small)
+            font-size: 12px
 
 .network-logo
     grid-column: 1
-    grid-row: 1 / 2
+    grid-row: 1 / span 2
     svg
-        width: 50px
-        height: auto
-        transition: transform 300ms            
+        height: 100%
+        transition: transform 300ms
+        @media screen and (min-width: $small)
+            width: 50px
+        @media screen and (max-width: $small)
+            width: 25px     
 
 .network-description
     grid-column: 2
     grid-row: 2
+    display: flex
+    align-items: center
+    @media screen and (min-width: $small)
+        font-size: 16px
+    @media screen and (max-width: $small)
+        font-size: 12px
 
 .random-svg
     fill: $third-color

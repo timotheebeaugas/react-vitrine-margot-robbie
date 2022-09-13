@@ -27,6 +27,7 @@ main
 
 aside
     margin: 0px 50px
+    font-family: 'Ovo'
     @media screen and (min-width: $medium)
         order: 1
         width: 300px
@@ -37,7 +38,7 @@ aside
         display: none
     p
         text-align: center
-        color: $second-color
+        color: $third-color
 
 figure
     margin: 0px
@@ -57,7 +58,7 @@ figure
         height: 95%
         width: 95%
         border-radius: 50%
-        background-color: rgba($second-color, 0.25)
+        background-color: rgba($third-color, 0.25)
         border: $border
     @media screen and (min-width: $medium)
         height: 300px
@@ -69,6 +70,7 @@ figure
 .biography-content
     max-width: 1000px
     font-family: 'Ovo'
+    color: $third-color
     @media screen and (min-width: $medium)
         margin: 0px 50px
     @media screen and (min-width: $small) and (max-width: $medium)
@@ -79,13 +81,10 @@ figure
 .scroll
     animation: scroll 1s ease forwards
 
-svg
-    fill: $first-color
-
 a
     text-decoration: none
     cursor: none
-    color: $first-color
+    color: $third-color
 
 .cards-content
     display: flex

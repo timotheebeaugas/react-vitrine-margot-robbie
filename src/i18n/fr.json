@@ -3,8 +3,8 @@
     "categories": [
         "Biographie",
         "Films",
-        "Awards",
         "Récompenses",
+        "Videos populaires",
         "Réseaux sociaux"
     ],
     "biography": {
@@ -279,7 +279,8 @@
             "https://www.youtube.com/embed/UYQ_Qh-NDLE",
             "https://www.youtube.com/embed/KjICBHj1EzM",
             "https://www.youtube.com/embed/yKC7vOhr2vM",
-            "https://www.youtube.com/embed/RDFBw4g_JZs"
+            "https://www.youtube.com/embed/RDFBw4g_JZs",
+            "https://www.youtube.com/embed/f94wKh70cOY"
         ]
     },
     "networks": {

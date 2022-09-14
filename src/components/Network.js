@@ -26,7 +26,7 @@ export const Network = ({ props }) => {
                 ig: <IG />,
                 vk: <VK />,
                 imdb: <IMDB />,
-                msg: <MSG class="random-svg" />,
+                msg: <MSG className="random-svg" />,
               }[content.icon]
             }
           </div>

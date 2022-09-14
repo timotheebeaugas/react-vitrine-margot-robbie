@@ -19,9 +19,12 @@ header
 
 h1
   font-family: 'Playfair Display italic'
-  font-size: 28px
   margin: 0
   color: $first-color
+  @media screen and (min-width: $small)
+    font-size: 28px
+  @media screen and (max-width: $small)
+    font-size: 22px
 
 .languages
   display: flex

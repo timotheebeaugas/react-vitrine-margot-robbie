@@ -17,6 +17,7 @@ function App() {
   const [waitingLanguage, setWaitingLanguage] = useState(false);
   const [isMobile] = useIsMobile();
   const [swipe, setSwipe] = useState();
+  const [mobileTouchPosition, setMobileTouchPosition] = useState();
 
   ResizeDevice();
 
@@ -29,6 +30,12 @@ function App() {
 
     const wheelMove = (event) => {
       if (!waiting) {
+        const sign = isMobile
+          ? Math.sign(
+              mobileTouchPosition -
+                event.changedTouches[event.changedTouches.length - 1].clientY
+            )
+          : Math.sign(event.deltaY);
         let style = getComputedStyle(document.body);
         let height = Number(
           style.getPropertyValue("--position-y").split("vh")[0]
@@ -39,13 +46,11 @@ function App() {
         let pageHeight = Number(
           style.getPropertyValue("--page-position-y").split("px")[0]
         );
-        let positionY = height - Math.sign(event.deltaY) * 100;
-        let positionX = width - Math.sign(event.deltaY) * 100;
+        let positionY = height - sign * 100;
+        let positionX = width - sign * 100;
 
         let page =
-          pageHeight -
-          Math.sign(event.deltaY) *
-            (pagination.getBoundingClientRect().height / 5);
+          pageHeight - sign * (pagination.getBoundingClientRect().height / 5);
 
         if (positionY >= -400 && positionY <= 0) {
           root.style.setProperty("--current-position-y", height + "vh");
@@ -66,7 +71,18 @@ function App() {
       }
     };
 
-    document.addEventListener("wheel", wheelMove);
+    const touchPosition = (event) => {
+      setMobileTouchPosition(
+        event.changedTouches[event.changedTouches.length - 1].clientY
+      );
+    };
+
+    if (isMobile) {
+      document.addEventListener("touchstart", touchPosition);
+      document.addEventListener("touchend", wheelMove);
+    } else {
+      document.addEventListener("wheel", wheelMove);
+    }
 
     let interval = setInterval(() => {
       if (waiting) {
@@ -81,10 +97,15 @@ function App() {
     }, 1000);
 
     return () => {
-      document.removeEventListener("wheel", wheelMove);
+      if (isMobile) {
+        document.removeEventListener("touchstart", touchPosition);
+        document.removeEventListener("touchend", wheelMove);
+      } else {
+        document.removeEventListener("wheel", wheelMove);
+      }
       clearInterval(interval);
     };
-  }, [waiting, waitingLanguage, content]);
+  }, [waiting, waitingLanguage, content, isMobile, mobileTouchPosition]);
 
   const changeLanguage = () => {
     const activeLanguage = document.querySelector(".languages-content");
@@ -158,7 +179,6 @@ function App() {
     };
 
     const touchPosition = (event) => {
-      
       if (swipe) {
         const element = document.querySelector("." + swipe.class);
         let position =
@@ -254,7 +274,7 @@ function App() {
                   <div className="portrait" alt={content.biography.caption} />
                 </figure>
                 <p>{content.biography.caption}</p>
-              </aside>    
+              </aside>
               <div className="biography-content">
                 {content.biography.paragraphs.map((content, i) => (
                   <Biography props={content} key={i} />
@@ -347,26 +367,27 @@ function App() {
             <div className="section-content">
               <div
                 className="cards-content video"
-                {...(!isMobile ? {
-                  onMouseDown: (event) =>
-                    setSwipe({
-                      class: "video",
-                      event: event,
-                      rect: document
-                        .querySelector(".video")
-                        .getBoundingClientRect(),
+                {...(!isMobile
+                  ? {
+                      onMouseDown: (event) =>
+                        setSwipe({
+                          class: "video",
+                          event: event,
+                          rect: document
+                            .querySelector(".video")
+                            .getBoundingClientRect(),
+                        }),
+                    }
+                  : {
+                      onPointerDown: (event) =>
+                        setSwipe({
+                          class: "video",
+                          event: event,
+                          rect: document
+                            .querySelector(".video")
+                            .getBoundingClientRect(),
+                        }),
                     })}
-                  :
-                  {
-                    onPointerDown: (event) =>
-                      setSwipe({
-                        class: "video",
-                        event: event,
-                        rect: document
-                          .querySelector(".video")
-                          .getBoundingClientRect(),
-                      })}
-                )}
               >
                 {content.videos.content.map((content, i) => (
                   <Video props={content} key={i} />

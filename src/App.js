@@ -29,7 +29,7 @@ function App() {
     const activeLanguage = document.querySelector(".languages-content");
 
     const wheelMove = (event) => {
-      if (!waiting) {
+      if (!waiting && (isMobile ? mobileTouchPosition : true)) {
         const sign = isMobile
           ? Math.sign(
               mobileTouchPosition -
@@ -105,7 +105,7 @@ function App() {
       }
       clearInterval(interval);
     };
-  }, [waiting, waitingLanguage, content, isMobile, mobileTouchPosition]);
+  }, [waiting, waitingLanguage, content, isMobile, mobileTouchPosition, swipe]);
 
   const changeLanguage = () => {
     const activeLanguage = document.querySelector(".languages-content");
@@ -131,6 +131,12 @@ function App() {
       setWaitingLanguage(true);
     }
   };
+
+  const swipeOff = () => {
+    if (swipe) {
+      setSwipe(false);
+    }
+  }
 
   const cursorHover = () => {
     const cursor = document.querySelector(".cursor");
@@ -158,9 +164,7 @@ function App() {
     if (cursor.classList.value.includes("cursor-active")) {
       cursor.classList.remove("cursor-active");
     }
-    if (swipe) {
-      setSwipe(false);
-    }
+    swipeOff()
   };
 
   useEffect(() => {
@@ -180,6 +184,7 @@ function App() {
 
     const touchPosition = (event) => {
       if (swipe) {
+        setMobileTouchPosition(null);
         const element = document.querySelector("." + swipe.class);
         let position =
           event.changedTouches[0].clientX -
@@ -213,10 +218,12 @@ function App() {
   return (
     <div
       className="App"
-      {...(!isMobile && {
-        onMouseDown: activeCursor,
-        onMouseUp: unactiveCursor,
-      })}
+      {...(!isMobile
+        ? {
+            onMouseDown: activeCursor,
+            onMouseUp: unactiveCursor,
+          }
+        : { onTouchEnd: swipeOff })}
     >
       {isMobile ? null : <Cursor />}
 

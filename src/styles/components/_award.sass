@@ -8,7 +8,7 @@
   display: grid
   grid-template-rows: 100px 70px 38px 142px
   grid-gap: 0px
-  font-family: 'Ovo'
+  font-family: $third-font-family
   color: $third-color
   &:nth-child(2n)
     border-top: $card-border-dark
@@ -17,7 +17,6 @@
 
 .card-award-date
   grid-row: 1
-  font-weight: bold
   font-size: 100px
   color: $third-color
   opacity: .25
@@ -25,8 +24,7 @@
 .card-award-title
   grid-row: 2
   h3
-    font-weight: bold
-    font-size: 24px
+    font-size: 20px
     margin: $margin 0px
 
 .card-award-category

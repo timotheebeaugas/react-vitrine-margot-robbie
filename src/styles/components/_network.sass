@@ -1,6 +1,6 @@
 .network
     margin: $margin
-    font-family: 'Ovo'
+    font-family: $third-font-family
     @media screen and (min-width: $small)
         width: 200px
         height: 50px
@@ -25,6 +25,8 @@
     grid-row: 1
     display: flex
     align-items: center
+    @media screen and (max-width: $small)
+        justify-content: center
     h3
         margin: 0px
         @media screen and (min-width: $small)
@@ -35,6 +37,9 @@
 .network-logo
     grid-column: 1
     grid-row: 1 / span 2
+    display: flex
+    align-items: center
+    justify-content: center
     svg
         height: 100%
         transition: transform 300ms
@@ -52,6 +57,7 @@
         font-size: 16px
     @media screen and (max-width: $small)
         font-size: 12px
+        justify-content: center
 
 .random-svg
     fill: $third-color

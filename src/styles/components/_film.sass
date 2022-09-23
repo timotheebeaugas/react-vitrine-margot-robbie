@@ -8,7 +8,7 @@
   display: grid
   grid-template-rows: 260px 65px 25px
   grid-gap: 0px
-  font-family: 'Ovo'
+  font-family: $third-font-family
   color: $third-color
   &:nth-child(2n)
     border-top: $card-border-dark
@@ -33,7 +33,7 @@
     top: 50%
     left: 50%
     transform: translate(-50%,-50%)
-    opacity: 0
+    opacity: 0.5
     transition: opacity 300ms
   &:hover svg
     opacity: 1
@@ -45,12 +45,11 @@
   h3
     margin: 10px 0px 0px 0px
     font-style: italic
-    font-size: 22px
+    font-size: 20px
 
 .card-film-date
   grid-row: 3
-  font-weight: bold
-  font-size: 22px
+  font-size: 20px
   color: $third-color
 
 

@@ -27,7 +27,7 @@ main
 
 aside
     margin: 0px 50px
-    font-family: 'Ovo'
+    font-family: $third-font-family
     @media screen and (min-width: $extra-large)
         order: 1
         width: 300px
@@ -79,7 +79,7 @@ figure
 
 .biography-content
     max-width: 1000px
-    font-family: 'Ovo'
+    font-family: $third-font-family
     color: $third-color
     @media screen and (min-width: $large)
         margin: 0px 50px
@@ -116,8 +116,8 @@ a
 
 .link
     position: relative
-    font-weight: bold
     padding-bottom: 5px
+    color: $first-color
     &:after
         background: none repeat scroll 0 0 transparent
         bottom: 0
@@ -127,8 +127,11 @@ a
         width: 0px
         left: 50%
         position: absolute
-        background: $third-color
+        background: $first-color
         transition: width 0.3s ease 0s, left 0.3s ease 0s
     &:hover:after
         width: 100%
         left: 0
+
+h3
+    font-weight: normal

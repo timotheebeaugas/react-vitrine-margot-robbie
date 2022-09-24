@@ -1,12 +1,9 @@
 .card-film
-  height: 350px
-  width: 250px
   margin: 0px $margin
   background-color: $card-background
   border-radius: $card-border-radius
   padding: 5px
   display: grid
-  grid-template-rows: 260px 65px 25px
   grid-gap: 0px
   font-family: $third-font-family
   color: $third-color
@@ -14,42 +11,55 @@
     border-top: $card-border-dark
   &:nth-child(2n+1)
     border-top: $card-border-light
+  @media screen and (min-width: $medium)
+    height: 350px
+    width: 250px
+    grid-template-rows: 260px 65px 25px
+  @media screen and (max-width: $medium)
+    height: 300px
+    width: 214px
+    grid-template-rows: 222px 55px 23px
 
 .card-film-image
   grid-row: 1
-  position: relative
-  img
-    height: 260px
-    max-width: 250px 
-    position: absolute
-    top: 50%
-    left: 50%
-    transform: translate(-50%,-50%)
-  svg
-    height: 48px
-    max-width: 48px
-    fill: $third-color
-    position: absolute
-    top: 50%
-    left: 50%
-    transform: translate(-50%,-50%)
-    opacity: 0.5
-    transition: opacity 300ms
-  &:hover svg
-    opacity: 1
-    
-
+  a
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    img
+      @media screen and (min-width: $medium)
+        height: 260px
+        max-width: 250px 
+      @media screen and (max-width: $medium)
+        height: 222px
+        max-width: 214px 
+    svg
+      position: absolute
+      height: 48px
+      max-width: 48px
+      fill: $third-color
+      transition: transform 300ms, fill 1s
+    &:hover svg
+      transform: scale(1.2)
+      fill: $first-color
 
 .card-film-title
   grid-row: 2
   h3
     margin: 10px 0px 0px 0px
     font-style: italic
-    font-size: 20px
+    @media screen and (min-width: $medium)
+      font-size: 20px
+    @media screen and (max-width: $medium)
+      font-size: 16px
 
 .card-film-date
   grid-row: 3
-  font-size: 20px
+  @media screen and (min-width: $medium)
+    font-size: 20px
+  @media screen and (max-width: $medium)
+    font-size: 16px
   color: $third-color
 
 

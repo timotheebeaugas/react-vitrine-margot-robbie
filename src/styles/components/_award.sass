@@ -1,12 +1,9 @@
 .card-award
-  height: 350px
-  width: 250px
   margin: 0px $margin
   background-color: $card-background
   border-radius: $card-border-radius
   padding: 5px
   display: grid
-  grid-template-rows: 100px 70px 38px 142px
   grid-gap: 0px
   font-family: $third-font-family
   color: $third-color
@@ -14,22 +11,36 @@
     border-top: $card-border-dark
   &:nth-child(2n+1)
     border-top: $card-border-light
+  @media screen and (min-width: $medium)
+    height: 350px
+    width: 250px
+    grid-template-rows: 100px 70px 38px 142px
+  @media screen and (max-width: $medium)
+    height: 300px
+    width: 214px
+    grid-template-rows: 86px 60px 33px 121px
 
 .card-award-date
   grid-row: 1
-  font-size: 100px
   color: $third-color
   opacity: .25
+  font-weight: bold
+  @media screen and (min-width: $medium)
+    font-size: 100px
+  @media screen and (max-width: $medium)
+    font-size: 86px
  
 .card-award-title
   grid-row: 2
   h3
-    font-size: 20px
     margin: $margin 0px
+    @media screen and (min-width: $medium)
+      font-size: 20px
+    @media screen and (max-width: $medium)
+      font-size: 16px
 
 .card-award-category
   grid-row: 3
-  transform: translateX(-10px)
   clip-path: polygon(0% 0%, 100% 0, 90% 50%, 100% 100%, 0% 100%)
   background-color: $fifth-color
   color: $third-color
@@ -39,10 +50,19 @@
   align-items: center
   span
     width: 90%
+  @media screen and (min-width: $medium)
+    font-size: 16px
+    transform: translateX(-10px)
+  @media screen and (max-width: $medium)
+    font-size: 14px
+    transform: translateX(-7px)
 
 .card-award-film
   grid-row: 4
   padding: $margin 0px
   font-style: italic
-  font-size: 22px
+  @media screen and (min-width: $medium)
+    font-size: 20px
+  @media screen and (max-width: $medium)
+    font-size: 16px
 

@@ -1,5 +1,2 @@
 fuite de mémoire firefox
 taille carte mobile
-svg player visible + scale hover
-changer police 3
-réduire taille bio

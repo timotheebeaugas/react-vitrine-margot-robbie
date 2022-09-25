@@ -1,2 +1,0 @@
-fuite de mémoire firefox
-taille carte mobile

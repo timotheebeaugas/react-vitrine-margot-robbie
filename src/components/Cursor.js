@@ -17,6 +17,9 @@ export const Cursor = () => {
         setDisplayMouse(false);
       } else {
         setDisplayMouse(true);
+        const ring = document.querySelector('.ring')
+        ring.style.transform = `translate(calc(${event.clientX}px - 50%), calc(${event.clientY}px - 50%))`
+        ring.style.opacity = 1;
       }
     };
 
@@ -30,7 +33,7 @@ export const Cursor = () => {
   return displayMouse ? (
     <>
       <div className="cursor" style={position}></div>
-      <div className="ring" style={position}></div>
+      <div className="ring"></div>
     </>
   ) : null;
 };

@@ -12,6 +12,8 @@ import { Biography } from "./components/Biography.js";
 import { Category } from "./components/Category.js";
 import { ReactComponent as Forward } from "./assets/icons/arrow_forward.svg";
 import { ReactComponent as Back } from "./assets/icons/arrow_back.svg";
+import { ReactComponent as LastPageForward } from "./assets/icons/last_page_black.svg";
+import { ReactComponent as FirstPageBack } from "./assets/icons/first_page_black.svg";
 
 function App() {
   const [content, currentLanguage, setCurrentLanguage] = useI18n("en");
@@ -162,18 +164,31 @@ function App() {
     }
   };
 
-  const swipeSection = (container, el, value) => {
-    setMobileTouchPosition(null);
-    let element = document.querySelector("." + container);
-    let step = window.innerWidth / 2
-    let currentPosition = element.getBoundingClientRect().left;
-    let newPosition = currentPosition + step * Math.sign(value);
-    if (
-      !isSwipeing &&
-      newPosition <= 0 &&
-      newPosition > - step * (element.scrollWidth / step)
-    ) {
-      element.style.left = `${newPosition}px`;
+  const swipeSection = (container, value) => {
+    if (!isSwipeing) {
+      setMobileTouchPosition(null);
+      const step = window.innerWidth / 2;
+      const element = document.querySelector("." + container);
+      const currentPosition = element.getBoundingClientRect().left;
+      const newPosition = currentPosition + step * Math.sign(value);
+
+      if (typeof value === "string") {
+        if (value === "start") {
+          element.style.left = `0px`;
+        } else {
+          element.style.left = `${-(
+            element.scrollWidth - window.innerWidth
+          )}px`;
+        }
+      } else {
+        if (newPosition < - element.scrollWidth + window.innerWidth) {
+          swipeSection(container, "end");
+        } else if (newPosition > 0) {
+          swipeSection(container, "start");
+        } else {
+          element.style.left = `${newPosition}px`;
+        }
+      }
       setIsSwiping(true);
     }
   };
@@ -284,15 +299,29 @@ function App() {
                 ))}
               </div>
               <div className="keys">
+                <FirstPageBack
+                  onClick={() => swipeSection("film", "start")}
+                  {...(!isMobile && {
+                    onMouseEnter: cursorHover,
+                    onMouseLeave: cursorNotHover,
+                  })}
+                />
                 <Back
-                  onClick={() => swipeSection("film", ".card-film", "+1")}
+                  onClick={() => swipeSection("film", +1)}
                   {...(!isMobile && {
                     onMouseEnter: cursorHover,
                     onMouseLeave: cursorNotHover,
                   })}
                 />
                 <Forward
-                  onClick={() => swipeSection("film", ".card-film", "-1")}
+                  onClick={() => swipeSection("film", -1)}
+                  {...(!isMobile && {
+                    onMouseEnter: cursorHover,
+                    onMouseLeave: cursorNotHover,
+                  })}
+                />
+                <LastPageForward
+                  onClick={() => swipeSection("film", "end")}
                   {...(!isMobile && {
                     onMouseEnter: cursorHover,
                     onMouseLeave: cursorNotHover,
@@ -309,15 +338,29 @@ function App() {
                 ))}
               </div>
               <div className="keys">
+                <FirstPageBack
+                  onClick={() => swipeSection("award", "start")}
+                  {...(!isMobile && {
+                    onMouseEnter: cursorHover,
+                    onMouseLeave: cursorNotHover,
+                  })}
+                />
                 <Back
-                  onClick={() => swipeSection("award", ".card-award", "+1")}
+                  onClick={() => swipeSection("award", +1)}
                   {...(!isMobile && {
                     onMouseEnter: cursorHover,
                     onMouseLeave: cursorNotHover,
                   })}
                 />
                 <Forward
-                  onClick={() => swipeSection("award", ".card-award", "-1")}
+                  onClick={() => swipeSection("award", -1)}
+                  {...(!isMobile && {
+                    onMouseEnter: cursorHover,
+                    onMouseLeave: cursorNotHover,
+                  })}
+                />
+                <LastPageForward
+                  onClick={() => swipeSection("award", "end")}
                   {...(!isMobile && {
                     onMouseEnter: cursorHover,
                     onMouseLeave: cursorNotHover,
@@ -334,15 +377,29 @@ function App() {
                 ))}
               </div>
               <div className="keys">
+                <FirstPageBack
+                  onClick={() => swipeSection("video", "start")}
+                  {...(!isMobile && {
+                    onMouseEnter: cursorHover,
+                    onMouseLeave: cursorNotHover,
+                  })}
+                />
                 <Back
-                  onClick={() => swipeSection("video", ".card-video", "+1")}
+                  onClick={() => swipeSection("video", +1)}
                   {...(!isMobile && {
                     onMouseEnter: cursorHover,
                     onMouseLeave: cursorNotHover,
                   })}
                 />
                 <Forward
-                  onClick={() => swipeSection("video", ".card-video", "-1")}
+                  onClick={() => swipeSection("video", -1)}
+                  {...(!isMobile && {
+                    onMouseEnter: cursorHover,
+                    onMouseLeave: cursorNotHover,
+                  })}
+                />
+                <LastPageForward
+                  onClick={() => swipeSection("video", "end")}
                   {...(!isMobile && {
                     onMouseEnter: cursorHover,
                     onMouseLeave: cursorNotHover,

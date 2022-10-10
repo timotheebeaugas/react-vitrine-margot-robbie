@@ -309,9 +309,9 @@
             },
             {
                 "icon": "msg",
-                "website": "Instagram",
+                "website": "Email",
                 "desc": "Theeb",
-                "link": "https://www.instagram.com/theeb.fr/"
+                "link": "mailto:theeb.fr@gmail.com"
             }
         ]
     }

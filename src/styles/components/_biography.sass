@@ -1,0 +1,66 @@
+aside
+    margin: 0px 50px
+    font-family: $third-font-family
+    @media screen and (min-width: $extra-large)
+        order: 1
+        width: 300px
+    @media screen and (max-height: $medium)
+        display: none        
+    @media screen and (min-width: $large) and (max-width: $extra-large)
+        display: none
+    @media screen and (min-width: $medium) and (max-width: $large)
+        display: none
+    @media screen and (min-width: $small) and (max-width: $medium)
+        display: none
+    @media screen and (max-width: $small)
+        display: none
+    p
+        text-align: center
+        color: $third-color
+
+figure
+    margin: 0px
+
+.portrait
+    position: relative
+    border-radius: 50%
+    background-image: url("../.././assets/images/margot-robbie.png")
+    background-size: 100%
+    background-repeat: no-repeat
+    display: flex
+    justify-content: center
+    align-items: flex-end
+    &:before
+        content: ''
+        z-index: -1
+        height: 95%
+        width: 95%
+        border-radius: 50%
+        background-color: rgba($third-color, 0.25)
+        border: $picture-border
+    @media screen and (min-width: $extra-large)
+        height: 300px
+        width: 300px
+    @media screen and (min-width: $large) and (max-width: $extra-large)
+        display: none
+    @media screen and (min-width: $medium) and (max-width: $large)
+        display: none
+    @media screen and (min-width: $small) and (max-width: $medium)
+        display: none
+    @media screen and (max-width: $small)
+        display: none
+
+.biography-content
+    max-width: 1000px
+    font-family: $third-font-family
+    color: $third-color
+    @media screen and (min-width: $large)
+        margin: 0px 50px
+    @media screen and (min-width: $medium) and (max-width: $large)
+        margin: 0px 20px
+    @media screen and (min-width: $small) and (max-width: $medium)
+        margin: 0px 10px
+        font-size: 14px
+    @media screen and (max-width: $small)
+        margin: 0px 10px
+        font-size: 12px

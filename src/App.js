@@ -10,14 +10,16 @@ import { Network } from "./components/Network.js";
 import { Video } from "./components/Video.js";
 import { Biography } from "./components/Biography.js";
 import { Category } from "./components/Category.js";
+import { ReactComponent as Forward } from "./assets/icons/arrow_forward.svg";
+import { ReactComponent as Back } from "./assets/icons/arrow_back.svg";
 
 function App() {
   const [content, currentLanguage, setCurrentLanguage] = useI18n("en");
   const [waiting, setWaiting] = useState(false);
   const [waitingLanguage, setWaitingLanguage] = useState(false);
   const [isMobile] = useIsMobile();
-  const [swipe, setSwipe] = useState();
   const [mobileTouchPosition, setMobileTouchPosition] = useState();
+  const [isSwipeing, setIsSwiping] = useState();
 
   ResizeDevice();
 
@@ -105,7 +107,7 @@ function App() {
       }
       clearInterval(interval);
     };
-  }, [waiting, waitingLanguage, content, isMobile, mobileTouchPosition, swipe]);
+  }, [waiting, waitingLanguage, content, isMobile, mobileTouchPosition]);
 
   const changeLanguage = () => {
     const activeLanguage = document.querySelector(".languages-content");
@@ -131,12 +133,6 @@ function App() {
       setWaitingLanguage(true);
     }
   };
-
-  const swipeOff = () => {
-    if (swipe) {
-      setSwipe(false);
-    }
-  }
 
   const cursorHover = () => {
     const cursor = document.querySelector(".cursor");
@@ -164,56 +160,30 @@ function App() {
     if (cursor.classList.value.includes("cursor-active")) {
       cursor.classList.remove("cursor-active");
     }
-    swipeOff()
+  };
+
+  const swipeSection = (container, el, value) => {
+    setMobileTouchPosition(null);
+    let element = document.querySelector("." + container);
+    let step = window.innerWidth / 2
+    let currentPosition = element.getBoundingClientRect().left;
+    let newPosition = currentPosition + step * Math.sign(value);
+    if (
+      !isSwipeing &&
+      newPosition <= 0 &&
+      newPosition > - step * (element.scrollWidth / step)
+    ) {
+      element.style.left = `${newPosition}px`;
+      setIsSwiping(true);
+    }
   };
 
   useEffect(() => {
-    const mousePosition = (event) => {
-      if (swipe) {
-        const element = document.querySelector("." + swipe.class);
-        let position = event.clientX - swipe.event.clientX + swipe.rect.left;
-
-        if (
-          position < 0 &&
-          position > window.innerWidth - element.scrollWidth
-        ) {
-          element.style.transform = "translateX(" + position + "px)";
-        }
-      }
-    };
-
-    const touchPosition = (event) => {
-      if (swipe) {
-        setMobileTouchPosition(null);
-        const element = document.querySelector("." + swipe.class);
-        let position =
-          event.changedTouches[0].clientX -
-          swipe.event.clientX +
-          swipe.rect.left;
-
-        if (
-          position < 0 &&
-          position > window.innerWidth - element.scrollWidth
-        ) {
-          element.style.transform = "translateX(" + position + "px)";
-        }
-      }
-    };
-
-    if (isMobile) {
-      document.addEventListener("touchmove", touchPosition);
-    } else {
-      document.addEventListener("mousemove", mousePosition);
-    }
-
-    return () => {
-      if (isMobile) {
-        document.removeEventListener("touchmove", touchPosition);
-      } else {
-        document.removeEventListener("mousemove", mousePosition);
-      }
-    };
-  }, [swipe, isMobile]);
+    const interval = setInterval(() => {
+      setIsSwiping(false);
+    }, 500);
+    return () => clearInterval(interval);
+  }, [isSwipeing]);
 
   return (
     <div
@@ -223,7 +193,7 @@ function App() {
             onMouseDown: activeCursor,
             onMouseUp: unactiveCursor,
           }
-        : { onTouchEnd: swipeOff })}
+        : null)}
     >
       {isMobile ? null : <Cursor />}
 
@@ -305,30 +275,7 @@ function App() {
           </section>
           <section className="section">
             <div className="section-content">
-              <div
-                className="cards-content film"
-                {...(!isMobile
-                  ? {
-                      onMouseDown: (event) =>
-                        setSwipe({
-                          class: "film",
-                          event: event,
-                          rect: document
-                            .querySelector(".film")
-                            .getBoundingClientRect(),
-                        }),
-                    }
-                  : {
-                      onPointerDown: (event) =>
-                        setSwipe({
-                          class: "film",
-                          event: event,
-                          rect: document
-                            .querySelector(".film")
-                            .getBoundingClientRect(),
-                        }),
-                    })}
-              >
+              <div className="cards-content film">
                 {content.films.content.map((content, i) => (
                   <Film
                     props={{ content, cursorHover, cursorNotHover, isMobile }}
@@ -336,69 +283,71 @@ function App() {
                   />
                 ))}
               </div>
-            </div>
-          </section>
-          <section className="section">
-            <div className="section-content">
-              <div
-                className="cards-content award"
-                {...(!isMobile
-                  ? {
-                      onMouseDown: (event) =>
-                        setSwipe({
-                          class: "award",
-                          event: event,
-                          rect: document
-                            .querySelector(".award")
-                            .getBoundingClientRect(),
-                        }),
-                    }
-                  : {
-                      onPointerDown: (event) =>
-                        setSwipe({
-                          class: "award",
-                          event: event,
-                          rect: document
-                            .querySelector(".award")
-                            .getBoundingClientRect(),
-                        }),
-                    })}
-              >
-                {content.awards.content.map((content, i) => (
-                  <Award props={{ content }} key={i} />
-                ))}
+              <div className="keys">
+                <Back
+                  onClick={() => swipeSection("film", ".card-film", "+1")}
+                  {...(!isMobile && {
+                    onMouseEnter: cursorHover,
+                    onMouseLeave: cursorNotHover,
+                  })}
+                />
+                <Forward
+                  onClick={() => swipeSection("film", ".card-film", "-1")}
+                  {...(!isMobile && {
+                    onMouseEnter: cursorHover,
+                    onMouseLeave: cursorNotHover,
+                  })}
+                />
               </div>
             </div>
           </section>
           <section className="section">
             <div className="section-content">
-              <div
-                className="cards-content video"
-                {...(!isMobile
-                  ? {
-                      onMouseDown: (event) =>
-                        setSwipe({
-                          class: "video",
-                          event: event,
-                          rect: document
-                            .querySelector(".video")
-                            .getBoundingClientRect(),
-                        }),
-                    }
-                  : {
-                      onPointerDown: (event) =>
-                        setSwipe({
-                          class: "video",
-                          event: event,
-                          rect: document
-                            .querySelector(".video")
-                            .getBoundingClientRect(),
-                        }),
-                    })}
-              >
+              <div className="cards-content award">
+                {content.awards.content.map((content, i) => (
+                  <Award props={{ content }} key={i} />
+                ))}
+              </div>
+              <div className="keys">
+                <Back
+                  onClick={() => swipeSection("award", ".card-award", "+1")}
+                  {...(!isMobile && {
+                    onMouseEnter: cursorHover,
+                    onMouseLeave: cursorNotHover,
+                  })}
+                />
+                <Forward
+                  onClick={() => swipeSection("award", ".card-award", "-1")}
+                  {...(!isMobile && {
+                    onMouseEnter: cursorHover,
+                    onMouseLeave: cursorNotHover,
+                  })}
+                />
+              </div>
+            </div>
+          </section>
+          <section className="section">
+            <div className="section-content">
+              <div className="cards-content video">
                 {content.videos.content.map((content, i) => (
                   <Video props={content} key={i} />
                 ))}
+              </div>
+              <div className="keys">
+                <Back
+                  onClick={() => swipeSection("video", ".card-video", "+1")}
+                  {...(!isMobile && {
+                    onMouseEnter: cursorHover,
+                    onMouseLeave: cursorNotHover,
+                  })}
+                />
+                <Forward
+                  onClick={() => swipeSection("video", ".card-video", "-1")}
+                  {...(!isMobile && {
+                    onMouseEnter: cursorHover,
+                    onMouseLeave: cursorNotHover,
+                  })}
+                />
               </div>
             </div>
           </section>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useI18n } from "./utils/hooks/i18n.js";
 import { Cursor } from "./components/Cursor";
 import { ResizeDevice } from "./utils/devices";
@@ -27,13 +27,13 @@ function App() {
 
   ResizeDevice();
 
-  const wheelMove = (diff) => {
+  const scroll = useCallback((diff) => {
     const section = document.querySelector(".content");
     const categories = document.querySelector(".categories-content");
     const pagination = document.querySelector(".pagination");
     const sign = Math.sign(diff);
     const nextPage = page + sign;
-    if (nextPage < 1 && nextPage > -5) {
+    if (!waiting && nextPage < 1 && nextPage > -5) {
       const paginationHeight = pagination.getBoundingClientRect().height / 5;
       section.style.transform = `translateY(${sign * 100 + page * 100}vh)`;
       categories.style.transform = `translateX(${sign * 100 + page * 100}%)`;
@@ -43,56 +43,11 @@ function App() {
       setPage(nextPage);
       setWaiting(true);
     }
-  };
+  }, [page, waiting]);
 
   useEffect(() => {
-    const root = document.querySelector(":root");
-    const section = document.querySelector(".content");
-    const categories = document.querySelector(".categories-content");
-    const pagination = document.querySelector(".pagination");
-    const activeLanguage = document.querySelector(".languages-content");
-
     const wheelMove = (event) => {
-      if (!waiting && (isMobile ? mobileTouchPosition : true)) {
-        const sign = isMobile
-          ? Math.sign(
-              mobileTouchPosition -
-                event.changedTouches[event.changedTouches.length - 1].clientY
-            )
-          : Math.sign(event.deltaY);
-        let style = getComputedStyle(document.body);
-        let height = Number(
-          style.getPropertyValue("--position-y").split("vh")[0]
-        );
-        let width = Number(
-          style.getPropertyValue("--position-x").split("%")[0]
-        );
-        let pageHeight = Number(
-          style.getPropertyValue("--page-position-y").split("px")[0]
-        );
-        let positionY = height - sign * 100;
-        let positionX = width - sign * 100;
-
-        let page =
-          pageHeight - sign * (pagination.getBoundingClientRect().height / 5);
-        console.log(pageHeight);
-        if (positionY >= -400 && positionY <= 0) {
-          root.style.setProperty("--current-position-y", height + "vh");
-          root.style.setProperty("--position-y", positionY + "vh");
-          root.style.setProperty("--current-position-x", width + "%");
-          root.style.setProperty("--position-x", positionX + "%");
-          root.style.setProperty(
-            "--current-page-position-y",
-            pageHeight + "px"
-          );
-          root.style.setProperty("--page-position-y", page + "px");
-
-          section.classList.add("scroll");
-          categories.classList.add("scroll-category");
-          pagination.classList.add("scroll-page");
-          setWaiting(true);
-        }
-      }
+      scroll(-event.deltaY);
     };
 
     const touchPosition = (event) => {
@@ -120,18 +75,6 @@ function App() {
       document.addEventListener("wheel", wheelMove);
     }
 
-    let interval = setInterval(() => {
-      if (waiting) {
-        setWaiting(false);
-        section.classList.remove("scroll");
-        categories.classList.remove("scroll-category");
-        pagination.classList.remove("scroll-page");
-      } else if (waitingLanguage) {
-        setWaitingLanguage(false);
-        activeLanguage.classList.remove("scroll-language");
-      }
-    }, 1000);
-
     return () => {
       if (isMobile) {
         document.removeEventListener("touchstart", touchPosition);
@@ -140,24 +83,16 @@ function App() {
       } else {
         document.removeEventListener("wheel", wheelMove);
       }
-      clearInterval(interval);
     };
-  }, [
-    waiting,
-    waitingLanguage,
-    content,
-    isMobile,
-    mobileTouchPosition,
-    mobileTouchMovePosition,
-  ]);
+  }, [waiting, isMobile, page, scroll]);
 
   useEffect(() => {
     const difference = mobileTouchMovePosition - mobileTouchPosition;
 
-    if (!waiting && (difference > 50 || difference < -50)) {
-      wheelMove(difference);
+    if (difference > 50 || difference < -50) {
+      scroll(difference);
     }
-  }, [mobileTouchPosition, mobileTouchMovePosition, waiting, page]);
+  }, [mobileTouchPosition, mobileTouchMovePosition, waiting, page, scroll]);
 
   const changeLanguage = () => {
     const activeLanguage = document.querySelector(".languages-content");
@@ -243,17 +178,24 @@ function App() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsSwiping(false);
+      if (isSwipeing) setIsSwiping(false);
     }, 500);
     return () => clearInterval(interval);
   }, [isSwipeing]);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setWaiting(false);
+      if (waiting) setWaiting(false);
     }, 1000);
     return () => clearInterval(interval);
   }, [waiting]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (waitingLanguage) setWaitingLanguage(false);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [waitingLanguage]);
 
   return (
     <div

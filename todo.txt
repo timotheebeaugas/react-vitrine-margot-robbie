@@ -1,0 +1,2 @@
+supprimer les variables et les fonctions
+appliquer un translate aux langues

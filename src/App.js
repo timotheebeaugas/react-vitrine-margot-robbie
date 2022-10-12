@@ -21,9 +21,29 @@ function App() {
   const [waitingLanguage, setWaitingLanguage] = useState(false);
   const [isMobile] = useIsMobile();
   const [mobileTouchPosition, setMobileTouchPosition] = useState();
+  const [mobileTouchMovePosition, setMobileTouchMovePosition] = useState();
   const [isSwipeing, setIsSwiping] = useState();
+  const [page, setPage] = useState(0);
 
   ResizeDevice();
+
+  const wheelMove = (diff) => {
+    const section = document.querySelector(".content");
+    const categories = document.querySelector(".categories-content");
+    const pagination = document.querySelector(".pagination");
+    const sign = Math.sign(diff);
+    const nextPage = page + sign;
+    if (nextPage < 1 && nextPage > -5) {
+      const paginationHeight = pagination.getBoundingClientRect().height / 5;
+      section.style.transform = `translateY(${sign * 100 + page * 100}vh)`;
+      categories.style.transform = `translateX(${sign * 100 + page * 100}%)`;
+      pagination.style.transform = `translateY(${
+        sign * paginationHeight + page * paginationHeight
+      }px)`;
+      setPage(nextPage);
+      setWaiting(true);
+    }
+  };
 
   useEffect(() => {
     const root = document.querySelector(":root");
@@ -55,7 +75,7 @@ function App() {
 
         let page =
           pageHeight - sign * (pagination.getBoundingClientRect().height / 5);
-
+        console.log(pageHeight);
         if (positionY >= -400 && positionY <= 0) {
           root.style.setProperty("--current-position-y", height + "vh");
           root.style.setProperty("--position-y", positionY + "vh");
@@ -81,9 +101,21 @@ function App() {
       );
     };
 
+    const touchMovePosition = (event) => {
+      setMobileTouchMovePosition(
+        event.changedTouches[event.changedTouches.length - 1].clientY
+      );
+    };
+
+    const removeTouchPositions = () => {
+      setMobileTouchPosition();
+      setMobileTouchMovePosition();
+    };
+
     if (isMobile) {
       document.addEventListener("touchstart", touchPosition);
-      document.addEventListener("touchend", wheelMove);
+      document.addEventListener("touchmove", touchMovePosition);
+      document.addEventListener("touchend", removeTouchPositions);
     } else {
       document.addEventListener("wheel", wheelMove);
     }
@@ -103,13 +135,29 @@ function App() {
     return () => {
       if (isMobile) {
         document.removeEventListener("touchstart", touchPosition);
-        document.removeEventListener("touchend", wheelMove);
+        document.removeEventListener("touchmove", touchMovePosition);
+        document.removeEventListener("touchend", removeTouchPositions);
       } else {
         document.removeEventListener("wheel", wheelMove);
       }
       clearInterval(interval);
     };
-  }, [waiting, waitingLanguage, content, isMobile, mobileTouchPosition]);
+  }, [
+    waiting,
+    waitingLanguage,
+    content,
+    isMobile,
+    mobileTouchPosition,
+    mobileTouchMovePosition,
+  ]);
+
+  useEffect(() => {
+    const difference = mobileTouchMovePosition - mobileTouchPosition;
+
+    if (!waiting && (difference > 50 || difference < -50)) {
+      wheelMove(difference);
+    }
+  }, [mobileTouchPosition, mobileTouchMovePosition, waiting, page]);
 
   const changeLanguage = () => {
     const activeLanguage = document.querySelector(".languages-content");
@@ -181,7 +229,7 @@ function App() {
           )}px`;
         }
       } else {
-        if (newPosition < - element.scrollWidth + window.innerWidth) {
+        if (newPosition < -element.scrollWidth + window.innerWidth) {
           swipeSection(container, "end");
         } else if (newPosition > 0) {
           swipeSection(container, "start");
@@ -199,6 +247,13 @@ function App() {
     }, 500);
     return () => clearInterval(interval);
   }, [isSwipeing]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setWaiting(false);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [waiting]);
 
   return (
     <div

@@ -96,25 +96,14 @@ function App() {
 
   const changeLanguage = () => {
     const activeLanguage = document.querySelector(".languages-content");
-    const root = document.querySelector(":root");
-
     if (!waitingLanguage) {
-      const style = getComputedStyle(document.body);
-      let languageHeight = Number(
-        style.getPropertyValue("--languages-position-y").split("px")[0]
-      );
-      let language =
-        languageHeight === 0
-          ? -(activeLanguage.getBoundingClientRect().height / 2)
-          : 0;
-
-      root.style.setProperty(
-        "--current-languages-position-y",
-        languageHeight + "px"
-      );
-      root.style.setProperty("--languages-position-y", language + "px");
-      activeLanguage.classList.add("scroll-language");
-      setCurrentLanguage(currentLanguage === "en" ? "fr" : "en");
+      if(currentLanguage === "en"){
+        activeLanguage.style.transform = `translateY(${-(activeLanguage.getBoundingClientRect().height / 2)}px)`;
+        setCurrentLanguage("fr");
+      }else{
+        activeLanguage.style.transform = `translateY(0px)`;
+        setCurrentLanguage("en");
+      }
       setWaitingLanguage(true);
     }
   };

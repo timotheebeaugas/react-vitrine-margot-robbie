@@ -30,10 +30,10 @@ export const Cursor = () => {
     };
   }, [position, displayMouse]);
 
-  return displayMouse ? (
+  return displayMouse && (
     <>
       <div className="cursor" style={position}></div>
       <div className="ring"></div>
     </>
-  ) : null;
+  );
 };

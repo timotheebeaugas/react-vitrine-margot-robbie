@@ -41,7 +41,6 @@ h1
   font-size: 18px
 
 .languages-content
-  transform: translateY(var(--languages-position-y))
   position: absolute
   display: grid
   grid-template-rows: repeat(2, 1fr)
@@ -61,9 +60,6 @@ h1
     text-transform: uppercase
     color: $second-color
 
-.scroll-language
-  animation: scroll-language 1s ease forwards
-
 .categories
   grid-column: 2
   grid-row: 2
@@ -80,14 +76,10 @@ h1
     width: 75%
 
 .categories-content
-  transform: translateX(var(--position-x))
   position: absolute
   display: grid
   grid-template-columns: repeat(5, 100%)
   width: 100%
   text-align: center
   transition: $scrolling-transition
-
-.scroll-category
-  animation: scroll-category 1s ease forwards
 

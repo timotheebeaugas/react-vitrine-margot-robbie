@@ -19,6 +19,24 @@
     "films": {
         "content": [
             {
+                "title": "Barbie",
+                "poster": "Barbie.jpg",
+                "date": "2023",
+                "trailer": "https://www.youtube.com/watch?v=pBk4NYhWNMM"
+            },
+            {
+                "title": "Asteroid City",
+                "poster": "Asteroid_City.jpg",
+                "date": "2023",
+                "trailer": "https://www.youtube.com/watch?v=wuRyxoNIhVs"
+            },
+            {
+                "title": "Babylon",
+                "poster": "Babylon.jpg",
+                "date": "2022",
+                "trailer": "https://www.youtube.com/watch?v=amBNXxFTpCk"
+            },
+            {
                 "title": "Amsterdam",
                 "poster": "Amsterdam.jpg",
                 "date": "2022",
